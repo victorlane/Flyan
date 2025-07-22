@@ -1,0 +1,146 @@
+{
+    "AED": {
+        "code": "AED",
+        "name": "UAE Dirham",
+        "precision": 2,
+        "symbol": "Dhs"
+    },
+    "AUD": {
+        "code": "AUD",
+        "name": "Australian Dollar",
+        "precision": 2,
+        "symbol": "A$"
+    },
+    "BRL": {
+        "code": "BRL",
+        "name": "Brazilian Real",
+        "precision": 2,
+        "symbol": "R$"
+    },
+    "CAD": {
+        "code": "CAD",
+        "name": "Canadian Dollar",
+        "precision": 2,
+        "symbol": "C$"
+    },
+    "CHF": {
+        "code": "CHF",
+        "name": "Swiss Franc",
+        "precision": 2,
+        "symbol": "SFr"
+    },
+    "CLP": {
+        "code": "CLP",
+        "name": "Chilean Peso",
+        "precision": 0,
+        "symbol": "$"
+    },
+    "COP": {
+        "code": "COP",
+        "name": "Colombian Peso",
+        "precision": 2,
+        "symbol": "$"
+    },
+    "CZK": {
+        "code": "CZK",
+        "name": "Czech Koruna",
+        "precision": 2,
+        "symbol": "Kč"
+    },
+    "DKK": {
+        "code": "DKK",
+        "name": "Danish Krone",
+        "precision": 2,
+        "symbol": "Dkr"
+    },
+    "EUR": {
+        "code": "EUR",
+        "name": "Euro",
+        "precision": 2,
+        "symbol": "€"
+    },
+    "GBP": {
+        "code": "GBP",
+        "name": "Sterling",
+        "precision": 2,
+        "symbol": "£"
+    },
+    "HUF": {
+        "code": "HUF",
+        "name": "Hungary Forint",
+        "precision": 0,
+        "symbol": "Ft"
+    },
+    "JOD": {
+        "code": "JOD",
+        "name": "Jordanian Dinar",
+        "precision": 2,
+        "symbol": "JD "
+    },
+    "JPY": {
+        "code": "JPY",
+        "name": "Japanese Yen",
+        "precision": 0,
+        "symbol": "¥"
+    },
+    "MAD": {
+        "code": "MAD",
+        "name": "Moroccan Dirham",
+        "precision": 2,
+        "symbol": "Dhs"
+    },
+    "MXN": {
+        "code": "MXN",
+        "name": "Mexican Peso",
+        "precision": 2,
+        "symbol": "$"
+    },
+    "NOK": {
+        "code": "NOK",
+        "name": "Norwegian Krone",
+        "precision": 2,
+        "symbol": "Nkr"
+    },
+    "NZD": {
+        "code": "NZD",
+        "name": "New Zealand Dollar",
+        "precision": 2,
+        "symbol": "$"
+    },
+    "PLN": {
+        "code": "PLN",
+        "name": "Poland New Zloty",
+        "precision": 2,
+        "symbol": "zł"
+    },
+    "RON": {
+        "code": "RON",
+        "name": "New Romanian Leu",
+        "precision": 2,
+        "symbol": ""
+    },
+    "RUB": {
+        "code": "RUB",
+        "name": "Russian Ruble",
+        "precision": 2,
+        "symbol": "₽"
+    },
+    "SEK": {
+        "code": "SEK",
+        "name": "Swedish Krona",
+        "precision": 2,
+        "symbol": "kr"
+    },
+    "UAH": {
+        "code": "UAH",
+        "name": "Ukraine Hryvna",
+        "precision": 2,
+        "symbol": ""
+    },
+    "USD": {
+        "code": "USD",
+        "name": "US Dollar",
+        "precision": 2,
+        "symbol": "$"
+    }
+}

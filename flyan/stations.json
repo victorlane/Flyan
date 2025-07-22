@@ -1,0 +1,2480 @@
+{
+    "AAL": {
+        "name": "Aalborg",
+        "country": "DK",
+        "timeZone": "DK",
+        "latitude": "570534N",
+        "longitude": "0095057E"
+    },
+    "AAR": {
+        "name": "Aarhus",
+        "country": "DK",
+        "timeZone": "DK",
+        "latitude": "561814N",
+        "longitude": "0103710E"
+    },
+    "ABZ": {
+        "name": "Aberdeen",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "571215N",
+        "longitude": "0021201W"
+    },
+    "ACE": {
+        "name": "Lanzarote",
+        "country": "ES",
+        "timeZone": "ES2",
+        "latitude": "285644N",
+        "longitude": "0133619W"
+    },
+    "ADB": {
+        "name": "Adnan Menderes",
+        "country": "TR",
+        "timeZone": "TR",
+        "latitude": "381733N",
+        "longitude": "0270925E"
+    },
+    "AGA": {
+        "name": "Agadir",
+        "country": "MA",
+        "timeZone": "MA",
+        "latitude": "301930N",
+        "longitude": "0092447W"
+    },
+    "AGH": {
+        "name": "Angelholm",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "561746N",
+        "longitude": "0125050E"
+    },
+    "AGP": {
+        "name": "Malaga",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "364030N",
+        "longitude": "0042957W"
+    },
+    "AHO": {
+        "name": "Alghero",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "403749N",
+        "longitude": "0081723E"
+    },
+    "ALC": {
+        "name": "Alicante",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "381656N",
+        "longitude": "0003329W"
+    },
+    "AMM": {
+        "name": "Amman",
+        "country": "JO",
+        "timeZone": "JO",
+        "latitude": "314300N",
+        "longitude": "0360000E"
+    },
+    "AMS": {
+        "name": "Amsterdam",
+        "country": "NL",
+        "timeZone": "NL",
+        "latitude": "521829N",
+        "longitude": "0044551E"
+    },
+    "ANG": {
+        "name": "Angoulême",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "454346N",
+        "longitude": "0001309E"
+    },
+    "AOC": {
+        "name": "Altenburg",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "505855N",
+        "longitude": "0123023E"
+    },
+    "AOI": {
+        "name": "Ancona",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "433700N",
+        "longitude": "0132137E"
+    },
+    "AQJ": {
+        "name": "Aqaba",
+        "country": "JO",
+        "timeZone": "JO",
+        "latitude": "293642N",
+        "longitude": "0350105E"
+    },
+    "ARN": {
+        "name": "Arlanda",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "593907N",
+        "longitude": "0175507E"
+    },
+    "ARW": {
+        "name": "Arad",
+        "country": "RO",
+        "timeZone": "RO",
+        "latitude": "461036N",
+        "longitude": "0211543E"
+    },
+    "ATH": {
+        "name": "Athens",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "375611N",
+        "longitude": "0235640E"
+    },
+    "AXD": {
+        "name": "Alexandropoulis",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "405121N",
+        "longitude": "0255723E"
+    },
+    "AYT": {
+        "name": "Antalya",
+        "country": "TR",
+        "timeZone": "TR",
+        "latitude": "365355N",
+        "longitude": "0304802E"
+    },
+    "BBU": {
+        "name": "Baneasa",
+        "country": "RO",
+        "timeZone": "RO",
+        "latitude": "443012N",
+        "longitude": "0260608E"
+    },
+    "BCN": {
+        "name": "Barcelona ",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "411749N",
+        "longitude": "0020442E"
+    },
+    "BDS": {
+        "name": "Brindisi",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "403938N",
+        "longitude": "0175653E"
+    },
+    "BEG": {
+        "name": "Belgrad Airport",
+        "country": "RS",
+        "timeZone": "RS",
+        "latitude": "444906N",
+        "longitude": "0201833E"
+    },
+    "BEM": {
+        "name": "Beni Mellal Airport",
+        "country": "MA",
+        "timeZone": "MA",
+        "latitude": "322022N",
+        "longitude": "0062139W"
+    },
+    "BER": {
+        "name": "Berlin (Brandenburg)",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "522200N",
+        "longitude": "0133012E"
+    },
+    "BES": {
+        "name": "Brest",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "482650N",
+        "longitude": "0042518W"
+    },
+    "BEY": {
+        "name": "Beirut International",
+        "country": "LB",
+        "timeZone": "LB",
+        "latitude": "334846N",
+        "longitude": "0352925E"
+    },
+    "BFS": {
+        "name": "Belfast",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "543927N",
+        "longitude": "0061257W"
+    },
+    "BGO": {
+        "name": "Flesland Airport",
+        "country": "NO",
+        "timeZone": "NO",
+        "latitude": "601737N",
+        "longitude": "0051310E"
+    },
+    "BGY": {
+        "name": "Milan (Bergamo)",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "454008N",
+        "longitude": "0094201E"
+    },
+    "BHD": {
+        "name": "Belfast (City)",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "543705N",
+        "longitude": "0055221W"
+    },
+    "BHX": {
+        "name": "Birmingham",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "522713N",
+        "longitude": "0014452W"
+    },
+    "BIA": {
+        "name": "Bastia Poretta",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "423257N",
+        "longitude": "0092910E"
+    },
+    "BIO": {
+        "name": "Bilbao",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "431804N",
+        "longitude": "0025438W"
+    },
+    "BIQ": {
+        "name": "Biarritz",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "432806N",
+        "longitude": "0013152W"
+    },
+    "BJV": {
+        "name": "Milas-Bodrum",
+        "country": "TR",
+        "timeZone": "TR",
+        "latitude": "371502N",
+        "longitude": "0273952E"
+    },
+    "BLK": {
+        "name": "Blackpool",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "534617N",
+        "longitude": "0030142W"
+    },
+    "BLL": {
+        "name": "Billund",
+        "country": "DK",
+        "timeZone": "DK",
+        "latitude": "554425N",
+        "longitude": "0090906E"
+    },
+    "BLQ": {
+        "name": "Bologna",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "443151N",
+        "longitude": "0111749E"
+    },
+    "BNX": {
+        "name": "Banja Luka",
+        "country": "BA",
+        "timeZone": "BA",
+        "latitude": "445600N",
+        "longitude": "0171800E"
+    },
+    "BOD": {
+        "name": "Bordeaux",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "444943N",
+        "longitude": "0004255W"
+    },
+    "BOH": {
+        "name": "Bournemouth",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "504648N",
+        "longitude": "0015033W"
+    },
+    "BOJ": {
+        "name": "Burgas",
+        "country": "BG",
+        "timeZone": "BG",
+        "latitude": "423411N",
+        "longitude": "0273055E"
+    },
+    "BRE": {
+        "name": "Bremen",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "530251N",
+        "longitude": "0084712E"
+    },
+    "BRI": {
+        "name": "Bari",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "410817N",
+        "longitude": "0164554E"
+    },
+    "BRQ": {
+        "name": "Brno",
+        "country": "CZ",
+        "timeZone": "CZ",
+        "latitude": "490905N",
+        "longitude": "0164140E"
+    },
+    "BRS": {
+        "name": "Bristol",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "512257N",
+        "longitude": "0024308W"
+    },
+    "BRU": {
+        "name": "Brussels (Zaventem)",
+        "country": "BE",
+        "timeZone": "BE",
+        "latitude": "505405N",
+        "longitude": "0042904E"
+    },
+    "BSL": {
+        "name": "Basel",
+        "country": "CH",
+        "timeZone": "CH",
+        "latitude": "473604N",
+        "longitude": "0073118E"
+    },
+    "BTS": {
+        "name": "Bratislava",
+        "country": "SK",
+        "timeZone": "SK",
+        "latitude": "481000N",
+        "longitude": "0171300E"
+    },
+    "BUD": {
+        "name": "Budapest ",
+        "country": "HU",
+        "timeZone": "HU",
+        "latitude": "472613N",
+        "longitude": "0191520E"
+    },
+    "BVA": {
+        "name": "Paris (Beauvais)",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "492716N",
+        "longitude": "0020646E"
+    },
+    "BVE": {
+        "name": "Brive (Souillac)",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "450906N",
+        "longitude": "0012819E"
+    },
+    "BZG": {
+        "name": "Bydgoszcz",
+        "country": "PL",
+        "timeZone": "PL",
+        "latitude": "530548N",
+        "longitude": "0175840E"
+    },
+    "BZR": {
+        "name": "Beziers",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "431924N",
+        "longitude": "0032112E"
+    },
+    "CAG": {
+        "name": "Cagliari",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "391505N",
+        "longitude": "0090328E"
+    },
+    "CCF": {
+        "name": "Carcassonne",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "431257N",
+        "longitude": "0021831E"
+    },
+    "CDG": {
+        "name": "Charles De Gaulle Airport",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "490035N",
+        "longitude": "0023252E"
+    },
+    "CDT": {
+        "name": "Castellon",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "401251N",
+        "longitude": "0000424E"
+    },
+    "CFE": {
+        "name": "Clermont (Ferrand)",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "454709N",
+        "longitude": "0030945E"
+    },
+    "CFU": {
+        "name": "Corfu",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "393607N",
+        "longitude": "0195442E"
+    },
+    "CGN": {
+        "name": "Cologne (Bonn)",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "505157N",
+        "longitude": "0070834E"
+    },
+    "CHQ": {
+        "name": "Crete (Chania)",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "353154N",
+        "longitude": "0240859E"
+    },
+    "CIA": {
+        "name": "Rome (Ciampino)",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "414756N",
+        "longitude": "0123542E"
+    },
+    "CIY": {
+        "name": "Comiso",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "365941N",
+        "longitude": "0143625E"
+    },
+    "CLJ": {
+        "name": "Cluj",
+        "country": "RO",
+        "timeZone": "RO",
+        "latitude": "464707N",
+        "longitude": "0234110E"
+    },
+    "CMN": {
+        "name": "Mohamed V Airport",
+        "country": "MA",
+        "timeZone": "MA",
+        "latitude": "332203N",
+        "longitude": "0073524W"
+    },
+    "CND": {
+        "name": "Constanta",
+        "country": "RO",
+        "timeZone": "RO",
+        "latitude": "442100N",
+        "longitude": "0282900E"
+    },
+    "CPH": {
+        "name": "Copenhagen ",
+        "country": "DK",
+        "timeZone": "DK",
+        "latitude": "553713N",
+        "longitude": "0123901E"
+    },
+    "CQM": {
+        "name": "Ciudad Real",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "385126N",
+        "longitude": "0035817W"
+    },
+    "CRA": {
+        "name": "Craiova",
+        "country": "RO",
+        "timeZone": "RO",
+        "latitude": "441905N",
+        "longitude": "0235319E"
+    },
+    "CRL": {
+        "name": "Brussels (Charleroi)",
+        "country": "BE",
+        "timeZone": "BE",
+        "latitude": "502733N",
+        "longitude": "0042714E"
+    },
+    "CRV": {
+        "name": "Crotone",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "385957N",
+        "longitude": "0170447E"
+    },
+    "CSO": {
+        "name": "Magdeburg (Cochstedt)",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "515121N",
+        "longitude": "0112505E"
+    },
+    "CTA": {
+        "name": "Catania (Fontanarossa)",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "372800N",
+        "longitude": "0150350E"
+    },
+    "CUF": {
+        "name": "Cuneo",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "443251N",
+        "longitude": "0073723E"
+    },
+    "CWL": {
+        "name": "Cardiff",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "512348N",
+        "longitude": "0032036W"
+    },
+    "DBV": {
+        "name": "Dubrovnik",
+        "country": "HR",
+        "timeZone": "HR",
+        "latitude": "423341N",
+        "longitude": "0181606E"
+    },
+    "DEB": {
+        "name": "Debrecen Airport",
+        "country": "HU",
+        "timeZone": "HU",
+        "latitude": "472920N",
+        "longitude": "0213655E"
+    },
+    "DLE": {
+        "name": "Dole",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "470234N",
+        "longitude": "0052606E"
+    },
+    "DLM": {
+        "name": "Dalaman",
+        "country": "TR",
+        "timeZone": "TR",
+        "latitude": "364247N",
+        "longitude": "0284733E"
+    },
+    "DNR": {
+        "name": "Dinard",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "483516N",
+        "longitude": "0020448W"
+    },
+    "DOL": {
+        "name": "Deauville-Normandy",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "492148N",
+        "longitude": "0000936E"
+    },
+    "DRS": {
+        "name": "Dresden",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "510804N",
+        "longitude": "0134605E"
+    },
+    "DSA": {
+        "name": "Doncaster",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "532831N",
+        "longitude": "0010014W"
+    },
+    "DTM": {
+        "name": "Dortmund",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "513106N",
+        "longitude": "0073644E"
+    },
+    "DUB": {
+        "name": "Dublin ",
+        "country": "IE",
+        "timeZone": "IE",
+        "latitude": "532517N",
+        "longitude": "0061612W"
+    },
+    "DUS": {
+        "name": "Düsseldorf",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "511722N",
+        "longitude": "0064600E"
+    },
+    "EBJ": {
+        "name": "Esbjerg",
+        "country": "DK",
+        "timeZone": "DK",
+        "latitude": "553135N",
+        "longitude": "0083309E"
+    },
+    "EBU": {
+        "name": "St. Etienne",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "453229N",
+        "longitude": "0041749E"
+    },
+    "EDI": {
+        "name": "Edinburgh",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "555700N",
+        "longitude": "0032221W"
+    },
+    "EFL": {
+        "name": "Kefalonia",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "380712N",
+        "longitude": "0203002E"
+    },
+    "EGC": {
+        "name": "Bergerac",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "444928N",
+        "longitude": "0003114E"
+    },
+    "EIN": {
+        "name": "Eindhoven",
+        "country": "NL",
+        "timeZone": "NL",
+        "latitude": "512700N",
+        "longitude": "0052228E"
+    },
+    "EMA": {
+        "name": "East Midlands",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "524952N",
+        "longitude": "0011941W"
+    },
+    "ERF": {
+        "name": "Erfurt",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "505847N",
+        "longitude": "0105729E"
+    },
+    "ERH": {
+        "name": "Errachidia Airport",
+        "country": "MA",
+        "timeZone": "MA",
+        "latitude": "315649N",
+        "longitude": "0042356W"
+    },
+    "ESU": {
+        "name": "Essaouira",
+        "country": "MA",
+        "timeZone": "MA",
+        "latitude": "312351N",
+        "longitude": "0094054W"
+    },
+    "ETM": {
+        "name": "Eilat (Ramon)",
+        "country": "IL",
+        "timeZone": "IL",
+        "latitude": "294338N",
+        "longitude": "0345954E"
+    },
+    "EVN": {
+        "name": "Yerevan-Zvartnots Airport",
+        "country": "AM",
+        "timeZone": "AM",
+        "latitude": "400850N",
+        "longitude": "0442345E"
+    },
+    "EXT": {
+        "name": "Exeter",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "504404N",
+        "longitude": "0032450W"
+    },
+    "FAO": {
+        "name": "Faro",
+        "country": "PT",
+        "timeZone": "PT1",
+        "latitude": "370052N",
+        "longitude": "0075757W"
+    },
+    "FCO": {
+        "name": "Rome (Fiumicino) ",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "414801N",
+        "longitude": "0121420E"
+    },
+    "FDH": {
+        "name": "Friedrichshafen",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "474017N",
+        "longitude": "0093041E"
+    },
+    "FEZ": {
+        "name": "Fez",
+        "country": "MA",
+        "timeZone": "MA",
+        "latitude": "335600N",
+        "longitude": "0045800W"
+    },
+    "FKB": {
+        "name": "Karlsruhe (Baden-Baden)",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "484646N",
+        "longitude": "0080450E"
+    },
+    "FMM": {
+        "name": "Memmingen",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "475917N",
+        "longitude": "0101415E"
+    },
+    "FMO": {
+        "name": "Munster",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "520805N",
+        "longitude": "0074105E"
+    },
+    "FNC": {
+        "name": "Madeira",
+        "country": "PT",
+        "timeZone": "PT1",
+        "latitude": "324139N",
+        "longitude": "0164641W"
+    },
+    "FNI": {
+        "name": "Nîmes",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "434500N",
+        "longitude": "0042500E"
+    },
+    "FRA": {
+        "name": "Frankfurt International",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "500159N",
+        "longitude": "0083414E"
+    },
+    "FRL": {
+        "name": "Bologna (Forli)",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "441144N",
+        "longitude": "0120411E"
+    },
+    "FSC": {
+        "name": "Figari",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "413008N",
+        "longitude": "0090548E"
+    },
+    "FUE": {
+        "name": "Fuerteventura",
+        "country": "ES",
+        "timeZone": "ES2",
+        "latitude": "282709N",
+        "longitude": "0135149W"
+    },
+    "GDN": {
+        "name": "Gdańsk",
+        "country": "PL",
+        "timeZone": "PL",
+        "latitude": "542239N",
+        "longitude": "0182758E"
+    },
+    "GLA": {
+        "name": "Glasgow ",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "555219N",
+        "longitude": "0042600W"
+    },
+    "GNB": {
+        "name": "Grenoble",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "452147N",
+        "longitude": "0051958E"
+    },
+    "GOA": {
+        "name": "Genoa",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "442448N",
+        "longitude": "0085015E"
+    },
+    "GOT": {
+        "name": "Gottenburg Landvetter",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "574000N",
+        "longitude": "0121700E"
+    },
+    "GPA": {
+        "name": "Patras (Araxos)",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "380904N",
+        "longitude": "0212532E"
+    },
+    "GRO": {
+        "name": "Girona (Barcelona)",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "415403N",
+        "longitude": "0024538E"
+    },
+    "GRQ": {
+        "name": "Groningen",
+        "country": "NL",
+        "timeZone": "NL",
+        "latitude": "530730N",
+        "longitude": "0063500E"
+    },
+    "GRX": {
+        "name": "Granada",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "371119N",
+        "longitude": "0034638W"
+    },
+    "GRZ": {
+        "name": "Graz",
+        "country": "AT",
+        "timeZone": "AT",
+        "latitude": "465937N",
+        "longitude": "0152624E"
+    },
+    "GSE": {
+        "name": "Gothenburg (City)",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "574629N",
+        "longitude": "0115213E"
+    },
+    "GVA": {
+        "name": "Geneva International Airport",
+        "country": "CH",
+        "timeZone": "CH",
+        "latitude": "461417N",
+        "longitude": "0060632E"
+    },
+    "HAJ": {
+        "name": "Hannover",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "522738N",
+        "longitude": "0094122E"
+    },
+    "HAM": {
+        "name": "Hamburg",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "533749N",
+        "longitude": "0095918E"
+    },
+    "HAU": {
+        "name": "Haugesund",
+        "country": "NO",
+        "timeZone": "NO",
+        "latitude": "592043N",
+        "longitude": "0051230E"
+    },
+    "HEL": {
+        "name": "Helsinki",
+        "country": "FI",
+        "timeZone": "FI",
+        "latitude": "601902N",
+        "longitude": "0245748E"
+    },
+    "HER": {
+        "name": "Heraklion Crete",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "352023N",
+        "longitude": "0251049E"
+    },
+    "HHN": {
+        "name": "Frankfurt (Hahn)",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "495655N",
+        "longitude": "0071550E"
+    },
+    "HRG": {
+        "name": "Hurghada Airport",
+        "country": "EG",
+        "timeZone": "EG",
+        "latitude": "271043N",
+        "longitude": "0334805E"
+    },
+    "HRK": {
+        "name": "Kharkov",
+        "country": "UA",
+        "timeZone": "UA",
+        "latitude": "495534N",
+        "longitude": "0361701E"
+    },
+    "HUY": {
+        "name": "Humberside",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "533428N",
+        "longitude": "0002103W"
+    },
+    "IAS": {
+        "name": "Iasi Airport",
+        "country": "RO",
+        "timeZone": "RO",
+        "latitude": "471043N",
+        "longitude": "0273714E"
+    },
+    "IBZ": {
+        "name": "Ibiza",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "385222N",
+        "longitude": "0012223E"
+    },
+    "IEG": {
+        "name": "Babimost Airport",
+        "country": "PL",
+        "timeZone": "PL",
+        "latitude": "520819N",
+        "longitude": "0154755E"
+    },
+    "IEV": {
+        "name": "Kiev-Zhulhany Airport",
+        "country": "UA",
+        "timeZone": "UA",
+        "latitude": "502406N",
+        "longitude": "0302659E"
+    },
+    "ILD": {
+        "name": "Lleida",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "414341N",
+        "longitude": "0003207E"
+    },
+    "INI": {
+        "name": "Nis",
+        "country": "RS",
+        "timeZone": "RS",
+        "latitude": "432014N",
+        "longitude": "0215113E"
+    },
+    "INN": {
+        "name": "Innsbruck",
+        "country": "AT",
+        "timeZone": "AT",
+        "latitude": "471537N",
+        "longitude": "0112038E"
+    },
+    "INV": {
+        "name": "Inverness",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "573224N",
+        "longitude": "0040300W"
+    },
+    "JKG": {
+        "name": "Jonkoping (Axamo)",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "574527N",
+        "longitude": "0140407E"
+    },
+    "JMK": {
+        "name": "Mykonos",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "372606N",
+        "longitude": "0252053E"
+    },
+    "JSI": {
+        "name": "Skiathos",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "391038N",
+        "longitude": "0233013E"
+    },
+    "JTR": {
+        "name": "Santorini",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "362357N",
+        "longitude": "0252846E"
+    },
+    "KBP": {
+        "name": "Kyiv - Borispol ",
+        "country": "UA",
+        "timeZone": "UA",
+        "latitude": "502042N",
+        "longitude": "0305341E"
+    },
+    "KEF": {
+        "name": "Keflavik International Airport",
+        "country": "IS",
+        "timeZone": "IS",
+        "latitude": "635906N",
+        "longitude": "0223620W"
+    },
+    "KGS": {
+        "name": "Kos",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "364736N",
+        "longitude": "0270530E"
+    },
+    "KHE": {
+        "name": "Kherson",
+        "country": "UA",
+        "timeZone": "UA",
+        "latitude": "464038N",
+        "longitude": "0323026E"
+    },
+    "KID": {
+        "name": "Kristianstad",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "555510N",
+        "longitude": "0140520E"
+    },
+    "KIR": {
+        "name": "Kerry",
+        "country": "IE",
+        "timeZone": "IE",
+        "latitude": "521051N",
+        "longitude": "0093126W"
+    },
+    "KIV": {
+        "name": "Chisinau Airport",
+        "country": "MD",
+        "timeZone": "MD",
+        "latitude": "465540N",
+        "longitude": "0285551E"
+    },
+    "KLR": {
+        "name": "Kalmar",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "564108N",
+        "longitude": "0161715E"
+    },
+    "KLU": {
+        "name": "Klagenfurt",
+        "country": "AT",
+        "timeZone": "AT",
+        "latitude": "463834N",
+        "longitude": "0142016E"
+    },
+    "KLX": {
+        "name": "Kalamata",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "370406N",
+        "longitude": "0220132E"
+    },
+    "KRK": {
+        "name": "Krakow",
+        "country": "PL",
+        "timeZone": "PL",
+        "latitude": "500440N",
+        "longitude": "0194705E"
+    },
+    "KSC": {
+        "name": "Kosice",
+        "country": "SK",
+        "timeZone": "SK",
+        "latitude": "483947N",
+        "longitude": "0211428E"
+    },
+    "KSD": {
+        "name": "Karlstad",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "592641N",
+        "longitude": "0132015E"
+    },
+    "KTW": {
+        "name": "Katowice",
+        "country": "PL",
+        "timeZone": "PL",
+        "latitude": "502900N",
+        "longitude": "0190500E"
+    },
+    "KUN": {
+        "name": "Kaunas",
+        "country": "LT",
+        "timeZone": "LT",
+        "latitude": "545750N",
+        "longitude": "0240505E"
+    },
+    "KUT": {
+        "name": "Kutaisi",
+        "country": "GE",
+        "timeZone": "GE",
+        "latitude": "421036N",
+        "longitude": "0422857E"
+    },
+    "KVA": {
+        "name": "Megas Alexandros",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "405448N",
+        "longitude": "0243709E"
+    },
+    "LBA": {
+        "name": "Leeds Bradford",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "535157N",
+        "longitude": "0013938W"
+    },
+    "LBC": {
+        "name": "Hamburg (Lübeck)",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "534819N",
+        "longitude": "0104309E"
+    },
+    "LBG": {
+        "name": "Le Bourget",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "485810N",
+        "longitude": "0022629E"
+    },
+    "LCA": {
+        "name": "Larnaca",
+        "country": "CY",
+        "timeZone": "CY",
+        "latitude": "345230N",
+        "longitude": "0333729E"
+    },
+    "LCJ": {
+        "name": "Lodz",
+        "country": "PL",
+        "timeZone": "PL",
+        "latitude": "514319N",
+        "longitude": "0192353E"
+    },
+    "LDE": {
+        "name": "Lourdes",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "431055N",
+        "longitude": "0000013W"
+    },
+    "LDY": {
+        "name": "Derry",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "550236N",
+        "longitude": "0070912W"
+    },
+    "LED": {
+        "name": "St Petersburg",
+        "country": "RU",
+        "timeZone": "RU2",
+        "latitude": "594800N",
+        "longitude": "0301800E"
+    },
+    "LEI": {
+        "name": "Almeria",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "365038N",
+        "longitude": "0022212W"
+    },
+    "LEJ": {
+        "name": "Leipzig (Halle)",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "512557N",
+        "longitude": "0121430E"
+    },
+    "LGG": {
+        "name": "Liege Airport",
+        "country": "BE",
+        "timeZone": "BE",
+        "latitude": "503815N",
+        "longitude": "0052636E"
+    },
+    "LGW": {
+        "name": "London (Gatwick)",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "510853N",
+        "longitude": "0001125W"
+    },
+    "LIG": {
+        "name": "Limoges",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "455139N",
+        "longitude": "0011049E"
+    },
+    "LIL": {
+        "name": "Lille",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "503348N",
+        "longitude": "0030513E"
+    },
+    "LIS": {
+        "name": "Lisbon ",
+        "country": "PT",
+        "timeZone": "PT1",
+        "latitude": "384627N",
+        "longitude": "0090803W"
+    },
+    "LJU": {
+        "name": "Brnik Airport",
+        "country": "SI",
+        "timeZone": "SI",
+        "latitude": "461329N",
+        "longitude": "0142739E"
+    },
+    "LLA": {
+        "name": "Kallax Airport",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "653238N",
+        "longitude": "0220719E"
+    },
+    "LNZ": {
+        "name": "Linz",
+        "country": "AT",
+        "timeZone": "AT",
+        "latitude": "481400N",
+        "longitude": "0141115E"
+    },
+    "LPA": {
+        "name": "Gran Canaria",
+        "country": "ES",
+        "timeZone": "ES2",
+        "latitude": "275555N",
+        "longitude": "0152312W"
+    },
+    "LPL": {
+        "name": "Liverpool",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "532001N",
+        "longitude": "0025059W"
+    },
+    "LPP": {
+        "name": "Lappeenranta",
+        "country": "FI",
+        "timeZone": "FI",
+        "latitude": "610240N",
+        "longitude": "0280840E"
+    },
+    "LRH": {
+        "name": "La Rochelle",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "461045N",
+        "longitude": "0011143W"
+    },
+    "LRT": {
+        "name": "Lorient",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "474538N",
+        "longitude": "0032624W"
+    },
+    "LTN": {
+        "name": "London (Luton)",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "515229N",
+        "longitude": "0002206W"
+    },
+    "LUX": {
+        "name": "Luxembourg",
+        "country": "LU",
+        "timeZone": "LU",
+        "latitude": "493724N",
+        "longitude": "0061216E"
+    },
+    "LUZ": {
+        "name": "Lublin",
+        "country": "PL",
+        "timeZone": "PL",
+        "latitude": "511353N",
+        "longitude": "0224126E"
+    },
+    "LWN": {
+        "name": "Shirak",
+        "country": "AM",
+        "timeZone": "AM",
+        "latitude": "404501N",
+        "longitude": "0435134E"
+    },
+    "LWO": {
+        "name": "Lviv",
+        "country": "UA",
+        "timeZone": "UA",
+        "latitude": "494845N",
+        "longitude": "0235722E"
+    },
+    "LYS": {
+        "name": "Lyon Satolas",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "454332N",
+        "longitude": "0050454E"
+    },
+    "MAD": {
+        "name": "Madrid ",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "402937N",
+        "longitude": "0033400W"
+    },
+    "MAH": {
+        "name": "Mahon",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "395145N",
+        "longitude": "0041307E"
+    },
+    "MAN": {
+        "name": "Manchester ",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "532113N",
+        "longitude": "0021630W"
+    },
+    "MBX": {
+        "name": "Maribor",
+        "country": "SI",
+        "timeZone": "SI",
+        "latitude": "462848N",
+        "longitude": "0154110E"
+    },
+    "MJT": {
+        "name": "Odysseas Elytis Airport",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "390312N",
+        "longitude": "0263608E"
+    },
+    "MJV": {
+        "name": "Murcia",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "374629N",
+        "longitude": "0004840W"
+    },
+    "MLA": {
+        "name": "Malta",
+        "country": "MT",
+        "timeZone": "MT",
+        "latitude": "355114N",
+        "longitude": "0142859E"
+    },
+    "MME": {
+        "name": "Teesside Intl.",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "543100N",
+        "longitude": "0012500W"
+    },
+    "MMX": {
+        "name": "Malmö",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "553233N",
+        "longitude": "0132230E"
+    },
+    "MPL": {
+        "name": "Montpellier",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "433451N",
+        "longitude": "0035803E"
+    },
+    "MRS": {
+        "name": "Marseille ",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "432608N",
+        "longitude": "0051259E"
+    },
+    "MSQ": {
+        "name": "Minsk International 2 Airport",
+        "country": "BY",
+        "timeZone": "BY",
+        "latitude": "535257N",
+        "longitude": "0280151E"
+    },
+    "MST": {
+        "name": "Maastricht",
+        "country": "NL",
+        "timeZone": "NL",
+        "latitude": "505457N",
+        "longitude": "0054637E"
+    },
+    "MUC": {
+        "name": "Munich International",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "482114N",
+        "longitude": "0114710E"
+    },
+    "MXP": {
+        "name": "Milan Malpensa ",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "453748N",
+        "longitude": "0084323E"
+    },
+    "NAP": {
+        "name": "Naples",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "405304N",
+        "longitude": "0141727E"
+    },
+    "NCE": {
+        "name": "Nice ",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "433955N",
+        "longitude": "0071254E"
+    },
+    "NCL": {
+        "name": "Newcastle",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "550215N",
+        "longitude": "0014130W"
+    },
+    "NDR": {
+        "name": "Nador",
+        "country": "MA",
+        "timeZone": "MA",
+        "latitude": "345920N",
+        "longitude": "0030142W"
+    },
+    "NOC": {
+        "name": "Knock",
+        "country": "IE",
+        "timeZone": "IE",
+        "latitude": "535437N",
+        "longitude": "0084907W"
+    },
+    "NQY": {
+        "name": "Newquay",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "502636N",
+        "longitude": "0050006W"
+    },
+    "NRK": {
+        "name": "Norrköping",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "583510N",
+        "longitude": "0161455E"
+    },
+    "NRN": {
+        "name": "Düsseldorf (Weeze)",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "513609N",
+        "longitude": "0060832E"
+    },
+    "NTE": {
+        "name": "Nantes",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "470930N",
+        "longitude": "0013635W"
+    },
+    "NUE": {
+        "name": "Nuremberg",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "492955N",
+        "longitude": "0110401E"
+    },
+    "NWI": {
+        "name": "Norwich",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "524100N",
+        "longitude": "0011700E"
+    },
+    "NYO": {
+        "name": "Stockholm Skavsta",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "584719N",
+        "longitude": "0165444E"
+    },
+    "ODS": {
+        "name": "Odessa-Central",
+        "country": "UA",
+        "timeZone": "UA",
+        "latitude": "462536N",
+        "longitude": "0304035E"
+    },
+    "OLB": {
+        "name": "Olbia",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "405355N",
+        "longitude": "0093104E"
+    },
+    "OMR": {
+        "name": "Oradea",
+        "country": "RO",
+        "timeZone": "RO",
+        "latitude": "470131N",
+        "longitude": "0215409E"
+    },
+    "OPO": {
+        "name": "Porto",
+        "country": "PT",
+        "timeZone": "PT1",
+        "latitude": "411408N",
+        "longitude": "0084041W"
+    },
+    "ORB": {
+        "name": "Orebro-Bofors Airport",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "591325N",
+        "longitude": "0150217E"
+    },
+    "ORK": {
+        "name": "Cork",
+        "country": "IE",
+        "timeZone": "IE",
+        "latitude": "515029N",
+        "longitude": "0082928W"
+    },
+    "OSD": {
+        "name": "Froesoe",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "631140N",
+        "longitude": "0143001E"
+    },
+    "OSI": {
+        "name": "Osijek",
+        "country": "HR",
+        "timeZone": "HR",
+        "latitude": "452746N",
+        "longitude": "0184837E"
+    },
+    "OSL": {
+        "name": "Oslo",
+        "country": "NO",
+        "timeZone": "NO",
+        "latitude": "601200N",
+        "longitude": "0110500E"
+    },
+    "OSR": {
+        "name": "Ostrava",
+        "country": "CZ",
+        "timeZone": "CZ",
+        "latitude": "494146N",
+        "longitude": "0180640E"
+    },
+    "OST": {
+        "name": "Ostend",
+        "country": "BE",
+        "timeZone": "BE",
+        "latitude": "511159N",
+        "longitude": "0025231E"
+    },
+    "OTP": {
+        "name": "Bucharest (Otopeni)",
+        "country": "RO",
+        "timeZone": "RO",
+        "latitude": "443420N",
+        "longitude": "0260608E"
+    },
+    "OUD": {
+        "name": "Oujda",
+        "country": "MA",
+        "timeZone": "MA",
+        "latitude": "344714N",
+        "longitude": "0015526W"
+    },
+    "OVD": {
+        "name": "Asturias",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "433400N",
+        "longitude": "0060200W"
+    },
+    "OZH": {
+        "name": "Zaporozhye Airport",
+        "country": "UA",
+        "timeZone": "UA",
+        "latitude": "475201N",
+        "longitude": "0351856E"
+    },
+    "OZZ": {
+        "name": "Ouarzazate",
+        "country": "MA",
+        "timeZone": "MA",
+        "latitude": "305621N",
+        "longitude": "0065434W"
+    },
+    "PAD": {
+        "name": "Paderborn",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "513651N",
+        "longitude": "0083659E"
+    },
+    "PDL": {
+        "name": "Ponta Delgada",
+        "country": "PT",
+        "timeZone": "PT2",
+        "latitude": "374428N",
+        "longitude": "0254152W"
+    },
+    "PDV": {
+        "name": "Plovdiv",
+        "country": "BG",
+        "timeZone": "BG",
+        "latitude": "420404N",
+        "longitude": "0245103E"
+    },
+    "PED": {
+        "name": "Pardubice",
+        "country": "CZ",
+        "timeZone": "CZ",
+        "latitude": "500048N",
+        "longitude": "0154419E"
+    },
+    "PEG": {
+        "name": "Perugia",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "430550N",
+        "longitude": "0123037E"
+    },
+    "PFO": {
+        "name": "Paphos",
+        "country": "CY",
+        "timeZone": "CY",
+        "latitude": "344305N",
+        "longitude": "0322909E"
+    },
+    "PGF": {
+        "name": "Perpignan",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "424427N",
+        "longitude": "0025211E"
+    },
+    "PIK": {
+        "name": "Glasgow (Prestwick)",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "553034N",
+        "longitude": "0043512W"
+    },
+    "PIS": {
+        "name": "Poitiers",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "463515N",
+        "longitude": "0001824E"
+    },
+    "PLQ": {
+        "name": "Palanga",
+        "country": "LT",
+        "timeZone": "LT",
+        "latitude": "555824N",
+        "longitude": "0210538E"
+    },
+    "PMF": {
+        "name": "Parma",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "444920N",
+        "longitude": "0101743E"
+    },
+    "PMI": {
+        "name": "Palma Mallorca",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "393306N",
+        "longitude": "0024420E"
+    },
+    "PMO": {
+        "name": "Palermo",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "381055N",
+        "longitude": "0130558E"
+    },
+    "POZ": {
+        "name": "Poznań",
+        "country": "PL",
+        "timeZone": "PL",
+        "latitude": "522516N",
+        "longitude": "0164935E"
+    },
+    "PRG": {
+        "name": "Prague",
+        "country": "CZ",
+        "timeZone": "CZ",
+        "latitude": "500603N",
+        "longitude": "0141536E"
+    },
+    "PRN": {
+        "name": "Pristina",
+        "country": "RS",
+        "timeZone": "RS",
+        "latitude": "423422N",
+        "longitude": "0210209E"
+    },
+    "PSA": {
+        "name": "Pisa",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "434058N",
+        "longitude": "0102344E"
+    },
+    "PSR": {
+        "name": "Pescara",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "422554N",
+        "longitude": "0141112E"
+    },
+    "PUF": {
+        "name": "Pau",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "432248N",
+        "longitude": "0002507W"
+    },
+    "PUY": {
+        "name": "Pula",
+        "country": "HR",
+        "timeZone": "HR",
+        "latitude": "445337N",
+        "longitude": "0135520E"
+    },
+    "PVK": {
+        "name": "Aktion",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "385532N",
+        "longitude": "0204555E"
+    },
+    "PXO": {
+        "name": "Porto Santo Airport",
+        "country": "PT",
+        "timeZone": "PT1",
+        "latitude": "330415N",
+        "longitude": "0162059W"
+    },
+    "QSR": {
+        "name": "Salerno Costa d'Amalfi Airport",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "403712N",
+        "longitude": "0145445E"
+    },
+    "RAK": {
+        "name": "Marrakesh",
+        "country": "MA",
+        "timeZone": "MA",
+        "latitude": "313625N",
+        "longitude": "0080211W"
+    },
+    "RBA": {
+        "name": "Rabat",
+        "country": "MA",
+        "timeZone": "MA",
+        "latitude": "340300N",
+        "longitude": "0064525W"
+    },
+    "RDZ": {
+        "name": "Rodez",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "442200N",
+        "longitude": "0023100E"
+    },
+    "REG": {
+        "name": "Reggio Calabria",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "381441N",
+        "longitude": "0153913E"
+    },
+    "REU": {
+        "name": "Reus (Barcelona)",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "410900N",
+        "longitude": "0011010E"
+    },
+    "RHO": {
+        "name": "Rhodes",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "362420N",
+        "longitude": "0280510E"
+    },
+    "RIX": {
+        "name": "Riga",
+        "country": "LV",
+        "timeZone": "LV",
+        "latitude": "565530N",
+        "longitude": "0235820E"
+    },
+    "RJK": {
+        "name": "Rijeka",
+        "country": "HR",
+        "timeZone": "HR",
+        "latitude": "451257N",
+        "longitude": "0143406E"
+    },
+    "RLG": {
+        "name": "Rostock",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "535505N",
+        "longitude": "0121642E"
+    },
+    "RMF": {
+        "name": "Marsa Alam Airport",
+        "country": "EG",
+        "timeZone": "EG",
+        "latitude": "253329N",
+        "longitude": "0343458E"
+    },
+    "RMI": {
+        "name": "Rimini",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "440110N",
+        "longitude": "0123634E"
+    },
+    "RMU": {
+        "name": "Murcia Intl",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "374814N",
+        "longitude": "0010738W"
+    },
+    "RNS": {
+        "name": "Rennes",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "480407N",
+        "longitude": "0014353W"
+    },
+    "RVN": {
+        "name": "Rovaniemi",
+        "country": "FI",
+        "timeZone": "FI",
+        "latitude": "663353N",
+        "longitude": "0254949E"
+    },
+    "RYG": {
+        "name": "Oslo (Rygge)",
+        "country": "NO",
+        "timeZone": "NO",
+        "latitude": "592244N",
+        "longitude": "0104708E"
+    },
+    "RZE": {
+        "name": "Rzeszów",
+        "country": "PL",
+        "timeZone": "PL",
+        "latitude": "500700N",
+        "longitude": "0220100E"
+    },
+    "SBZ": {
+        "name": "Sibiu Airport",
+        "country": "RO",
+        "timeZone": "RO",
+        "latitude": "454708N",
+        "longitude": "0240529E"
+    },
+    "SCQ": {
+        "name": "Santiago Comp.",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "425347N",
+        "longitude": "0082455W"
+    },
+    "SCV": {
+        "name": "Suceava Airport",
+        "country": "RO",
+        "timeZone": "RO",
+        "latitude": "474122N",
+        "longitude": "0262122E"
+    },
+    "SDR": {
+        "name": "Santander",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "432537N",
+        "longitude": "0034912W"
+    },
+    "SEN": {
+        "name": "Southend",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "513417N",
+        "longitude": "0004144E"
+    },
+    "SFT": {
+        "name": "Skelleftea",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "643730N",
+        "longitude": "0210442E"
+    },
+    "SJJ": {
+        "name": "Sarajevo Airport",
+        "country": "BA",
+        "timeZone": "BA",
+        "latitude": "434929N",
+        "longitude": "0181953E"
+    },
+    "SKG": {
+        "name": "Thessaloniki",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "403111N",
+        "longitude": "0225815E"
+    },
+    "SNN": {
+        "name": "Shannon",
+        "country": "IE",
+        "timeZone": "IE",
+        "latitude": "524207N",
+        "longitude": "0085529W"
+    },
+    "SOB": {
+        "name": "Balaton",
+        "country": "HU",
+        "timeZone": "HU",
+        "latitude": "464110N",
+        "longitude": "0170933E"
+    },
+    "SOF": {
+        "name": "Sofia",
+        "country": "BG",
+        "timeZone": "BG",
+        "latitude": "424142N",
+        "longitude": "0232430E"
+    },
+    "SPC": {
+        "name": "La Palma",
+        "country": "ES",
+        "timeZone": "ES2",
+        "latitude": "283735N",
+        "longitude": "0174520W"
+    },
+    "SPU": {
+        "name": "Split",
+        "country": "HR",
+        "timeZone": "HR",
+        "latitude": "433130N",
+        "longitude": "0161732E"
+    },
+    "STN": {
+        "name": "London (Stansted)",
+        "country": "GB",
+        "timeZone": "GB",
+        "latitude": "515306N",
+        "longitude": "0001406E"
+    },
+    "STR": {
+        "name": "Stuttgart",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "484124N",
+        "longitude": "0091319E"
+    },
+    "SUF": {
+        "name": "Lamezia",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "385430N",
+        "longitude": "0161430E"
+    },
+    "SVG": {
+        "name": "Sola",
+        "country": "NO",
+        "timeZone": "NO",
+        "latitude": "585247N",
+        "longitude": "0053805E"
+    },
+    "SVQ": {
+        "name": "Seville",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "372505N",
+        "longitude": "0055335W"
+    },
+    "SXB": {
+        "name": "Strasbourg",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "483231N",
+        "longitude": "0073804E"
+    },
+    "SXF": {
+        "name": "Berlin (Schonefeld) ",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "522200N",
+        "longitude": "0133000E"
+    },
+    "SZG": {
+        "name": "Salzburg",
+        "country": "AT",
+        "timeZone": "AT",
+        "latitude": "474736N",
+        "longitude": "0130016E"
+    },
+    "SZY": {
+        "name": "Olsztyn-Mazury",
+        "country": "PL",
+        "timeZone": "PL",
+        "latitude": "532850N",
+        "longitude": "0205614E"
+    },
+    "SZZ": {
+        "name": "Szczecin",
+        "country": "PL",
+        "timeZone": "PL",
+        "latitude": "533500N",
+        "longitude": "0145400E"
+    },
+    "TAT": {
+        "name": "Poprad/Tatry Airport",
+        "country": "SK",
+        "timeZone": "SK",
+        "latitude": "490425N",
+        "longitude": "0201428E"
+    },
+    "TBS": {
+        "name": "Tbilisi",
+        "country": "GE",
+        "timeZone": "GE",
+        "latitude": "414000N",
+        "longitude": "0445700E"
+    },
+    "TER": {
+        "name": "Lajes",
+        "country": "PT",
+        "timeZone": "PT2",
+        "latitude": "384524N",
+        "longitude": "0270539W"
+    },
+    "TFN": {
+        "name": "Tenerife (North)",
+        "country": "ES",
+        "timeZone": "ES2",
+        "latitude": "282858N",
+        "longitude": "0162030W"
+    },
+    "TFS": {
+        "name": "Tenerife (South)",
+        "country": "ES",
+        "timeZone": "ES2",
+        "latitude": "280240N",
+        "longitude": "0163421W"
+    },
+    "TGD": {
+        "name": "Podgorica",
+        "country": "ME",
+        "timeZone": "ME",
+        "latitude": "422130N",
+        "longitude": "0191507E"
+    },
+    "TGM": {
+        "name": "Targu Mures",
+        "country": "RO",
+        "timeZone": "RO",
+        "latitude": "462804N",
+        "longitude": "0242445E"
+    },
+    "TIA": {
+        "name": "Tirana",
+        "country": "AL",
+        "timeZone": "AL",
+        "latitude": "412454N",
+        "longitude": "0194315E"
+    },
+    "TIV": {
+        "name": "Tivat",
+        "country": "ME",
+        "timeZone": "ME",
+        "latitude": "422417N",
+        "longitude": "0184324E"
+    },
+    "TKU": {
+        "name": "Turku ",
+        "country": "FI",
+        "timeZone": "FI",
+        "latitude": "603051N",
+        "longitude": "0221614E"
+    },
+    "TLL": {
+        "name": "Tallinn",
+        "country": "EE",
+        "timeZone": "EE",
+        "latitude": "592448N",
+        "longitude": "0244957E"
+    },
+    "TLN": {
+        "name": "Toulon",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "430600N",
+        "longitude": "0060900E"
+    },
+    "TLS": {
+        "name": "Toulouse",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "433749N",
+        "longitude": "0012154E"
+    },
+    "TLV": {
+        "name": "Tel Aviv",
+        "country": "IL",
+        "timeZone": "IL",
+        "latitude": "320026N",
+        "longitude": "0345250E"
+    },
+    "TMP": {
+        "name": "Tampere",
+        "country": "FI",
+        "timeZone": "FI",
+        "latitude": "612451N",
+        "longitude": "0233616E"
+    },
+    "TNG": {
+        "name": "Tangier",
+        "country": "MA",
+        "timeZone": "MA",
+        "latitude": "354300N",
+        "longitude": "0055500W"
+    },
+    "TNL": {
+        "name": "Ternopol",
+        "country": "UA",
+        "timeZone": "UA",
+        "latitude": "493400N",
+        "longitude": "0253600E"
+    },
+    "TPS": {
+        "name": "Trapani",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "375427N",
+        "longitude": "0122939E"
+    },
+    "TRF": {
+        "name": "Oslo (Torp)",
+        "country": "NO",
+        "timeZone": "NO",
+        "latitude": "591112N",
+        "longitude": "0101531E"
+    },
+    "TRN": {
+        "name": "Turin",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "451209N",
+        "longitude": "0073858E"
+    },
+    "TRS": {
+        "name": "Trieste",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "454939N",
+        "longitude": "0132820E"
+    },
+    "TSF": {
+        "name": "Venice (Treviso)",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "453903N",
+        "longitude": "0121152E"
+    },
+    "TSR": {
+        "name": "Timisoara",
+        "country": "RO",
+        "timeZone": "RO",
+        "latitude": "454836N",
+        "longitude": "0212016E"
+    },
+    "TTU": {
+        "name": "Tetouan",
+        "country": "MA",
+        "timeZone": "MA",
+        "latitude": "353524N",
+        "longitude": "0051941W"
+    },
+    "TUF": {
+        "name": "Tours",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "472555N",
+        "longitude": "0004323E"
+    },
+    "TXL": {
+        "name": "BerlinTegel",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "523335N",
+        "longitude": "0131716E"
+    },
+    "TZL": {
+        "name": "Tuzla",
+        "country": "BA",
+        "timeZone": "BA",
+        "latitude": "442731N",
+        "longitude": "0184332E"
+    },
+    "TZX": {
+        "name": "Trabzon Airport",
+        "country": "TR",
+        "timeZone": "TR",
+        "latitude": "405955N",
+        "longitude": "0394635E"
+    },
+    "VAR": {
+        "name": "Varna",
+        "country": "BG",
+        "timeZone": "BG",
+        "latitude": "431355N",
+        "longitude": "0274930E"
+    },
+    "VBS": {
+        "name": "Verona (Brescia)",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "452544N",
+        "longitude": "0101950E"
+    },
+    "VBY": {
+        "name": "Visby Airport",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "573947N",
+        "longitude": "0182058E"
+    },
+    "VCE": {
+        "name": "Venice (Marco Polo)",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "453019N",
+        "longitude": "0122107E"
+    },
+    "VDA": {
+        "name": "Eilat (Ovda)",
+        "country": "IL",
+        "timeZone": "IL",
+        "latitude": "295625N",
+        "longitude": "0345609E"
+    },
+    "VGO": {
+        "name": "Vigo",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "421335N",
+        "longitude": "0083740W"
+    },
+    "VIE": {
+        "name": "Vienna",
+        "country": "AT",
+        "timeZone": "AT",
+        "latitude": "480637N",
+        "longitude": "0163441E"
+    },
+    "VIT": {
+        "name": "Vitoria (Bilbao)",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "425247N",
+        "longitude": "0024345W"
+    },
+    "VLC": {
+        "name": "Valencia",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "392925N",
+        "longitude": "0002843W"
+    },
+    "VLL": {
+        "name": "Valladolid",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "414222N",
+        "longitude": "0045107W"
+    },
+    "VNO": {
+        "name": "Vilnius",
+        "country": "LT",
+        "timeZone": "LT",
+        "latitude": "543803N",
+        "longitude": "0251709E"
+    },
+    "VOL": {
+        "name": "Volos",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "391311N",
+        "longitude": "0224740E"
+    },
+    "VRN": {
+        "name": "Verona",
+        "country": "IT",
+        "timeZone": "IT",
+        "latitude": "452347N",
+        "longitude": "0105317E"
+    },
+    "VST": {
+        "name": "Stockholm Vasteras",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "593522N",
+        "longitude": "0163801E"
+    },
+    "VXO": {
+        "name": "Smaland (Vaxjo)",
+        "country": "SE",
+        "timeZone": "SE",
+        "latitude": "565600N",
+        "longitude": "0144400E"
+    },
+    "WAW": {
+        "name": "Warsaw (Chopin)",
+        "country": "PL",
+        "timeZone": "PL",
+        "latitude": "520957N",
+        "longitude": "0205802E"
+    },
+    "WMI": {
+        "name": "Warsaw (Modlin)",
+        "country": "PL",
+        "timeZone": "PL",
+        "latitude": "522704N",
+        "longitude": "0203906E"
+    },
+    "WRO": {
+        "name": "Wroclaw",
+        "country": "PL",
+        "timeZone": "PL",
+        "latitude": "510610N",
+        "longitude": "0165309E"
+    },
+    "XCR": {
+        "name": "Paris (Vatry)",
+        "country": "FR",
+        "timeZone": "FR",
+        "latitude": "484624N",
+        "longitude": "0041222E"
+    },
+    "XRY": {
+        "name": "Jerez",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "364441N",
+        "longitude": "0060336W"
+    },
+    "ZAD": {
+        "name": "Zadar",
+        "country": "HR",
+        "timeZone": "HR",
+        "latitude": "440552N",
+        "longitude": "0152124E"
+    },
+    "ZAG": {
+        "name": "Zagreb",
+        "country": "HR",
+        "timeZone": "HR",
+        "latitude": "454435N",
+        "longitude": "0160413E"
+    },
+    "ZAZ": {
+        "name": "Zaragoza",
+        "country": "ES",
+        "timeZone": "ES1",
+        "latitude": "413958N",
+        "longitude": "0010230W"
+    },
+    "ZQW": {
+        "name": "Zweibrucken",
+        "country": "DE",
+        "timeZone": "DE",
+        "latitude": "491234N",
+        "longitude": "0072402E"
+    },
+    "ZRH": {
+        "name": "Zurich",
+        "country": "CH",
+        "timeZone": "CH",
+        "latitude": "472730N",
+        "longitude": "0083306E"
+    },
+    "ZTH": {
+        "name": "Zakinthos",
+        "country": "GR",
+        "timeZone": "GR",
+        "latitude": "374503N",
+        "longitude": "0205303E"
+    }
+}
