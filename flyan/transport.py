@@ -100,15 +100,11 @@ class RyanairTransport:
             except httpx.HTTPError:
                 logger.warning("Could not warm cookies from %s", HOMEPAGE_URL)
 
-    # --- lifecycle --------------------------------------------------------
-
     def close(self) -> None:
         try:
             self.client.close()
         except Exception:
             pass
-
-    # --- raw fetch --------------------------------------------------------
 
     @retry(
         stop=stop_after_attempt(5),
@@ -120,8 +116,6 @@ class RyanairTransport:
         response = self.client.get(url, params=params or {})
         response.raise_for_status()
         return response
-
-    # --- public interface -------------------------------------------------
 
     def get_json(self, url: str, params: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """GET ``url`` and return the decoded JSON body.

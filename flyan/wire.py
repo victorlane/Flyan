@@ -24,9 +24,6 @@ from .misc import (
 )
 
 
-# --- serialize ----------------------------------------------------------------
-
-
 def serialize_search_params(
     params: FlightSearchParams, currency: Optional[str] = None
 ) -> Dict[str, Any]:
@@ -57,9 +54,6 @@ def serialize_search_params(
             out["inboundDepartureTimeTo"] = params.inbound_departure_time_to
 
     return out
-
-
-# --- parse --------------------------------------------------------------------
 
 
 def parse_airport(raw: Dict[str, Any]) -> Airport:

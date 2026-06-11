@@ -74,8 +74,6 @@ class RyanAir:
         self.currency = currency if currency in currencies else "EUR"
         self.transport: Transport = transport or RyanairTransport()
 
-    # --- lifecycle --------------------------------------------------------
-
     def close(self) -> None:
         self.transport.close()
 
@@ -84,8 +82,6 @@ class RyanAir:
 
     def __exit__(self, exc_type, exc, tb) -> None:
         self.close()
-
-    # --- fare searches ----------------------------------------------------
 
     def get_oneways(self, params: FlightSearchParams) -> list[Flight]:
         """Cheapest one-way fares in the given date window.
@@ -153,8 +149,6 @@ class RyanAir:
             return parse_network(data)
         except (KeyError, ValueError) as exc:
             raise RyanairException(f"unexpected network shape: {exc}") from exc
-
-    # --- convenience ------------------------------------------------------
 
     def validate_route(self, origin: str, destination: str) -> bool:
         """True if Ryanair currently flies ``origin`` → ``destination``.
