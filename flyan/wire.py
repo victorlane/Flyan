@@ -18,6 +18,7 @@ from .misc import (
     Network,
     NetworkAirport,
     NetworkCountry,
+    ReturnDailyFares,
     ReturnFlight,
     ReturnFlightSearchParams,
     TimetableFlight,
@@ -119,6 +120,26 @@ def parse_daily_fare(raw: Dict[str, Any]) -> DailyFare:
         sold_out=bool(raw.get("soldOut")),
         unavailable=bool(raw.get("unavailable")),
     )
+
+
+def parse_return_daily_fares(raw: Dict[str, Any]) -> ReturnDailyFares:
+    return ReturnDailyFares(
+        outbound=[parse_daily_fare(f) for f in raw.get("outbound", {}).get("fares", [])],
+        inbound=[parse_daily_fare(f) for f in raw.get("inbound", {}).get("fares", [])],
+    )
+
+
+def parse_availabilities(raw: Any) -> list[datetime]:
+    """The availabilities endpoint returns a top-level JSON array of date strings."""
+    if not isinstance(raw, list):
+        return []
+    out: list[datetime] = []
+    for s in raw:
+        try:
+            out.append(datetime.fromisoformat(s))
+        except (TypeError, ValueError):
+            continue
+    return out
 
 
 def parse_timetable_flight(raw: Dict[str, Any]) -> TimetableFlight:
