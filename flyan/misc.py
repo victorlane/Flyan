@@ -98,6 +98,60 @@ class TimetableFlight(BaseModel):
     arrival_time: str
 
 
+class ReturnDailyFares(BaseModel):
+    """Cheapest fare per day for outbound and inbound legs of a return trip."""
+
+    outbound: list["DailyFare"]
+    inbound: list["DailyFare"]
+
+
+class AirportRoute(BaseModel):
+    """An ``airport:XXX`` entry from a NetworkAirport.routes string."""
+
+    kind: str = "airport"
+    iata_code: str
+
+
+class CityRoute(BaseModel):
+    """A ``city:NAME`` entry."""
+
+    kind: str = "city"
+    code: str
+
+
+class CountryRoute(BaseModel):
+    """A ``country:xx`` entry (lowercase iso2)."""
+
+    kind: str = "country"
+    code: str
+
+
+class RegionRoute(BaseModel):
+    """A ``region:NAME`` entry."""
+
+    kind: str = "region"
+    code: str
+
+
+Route = AirportRoute | CityRoute | CountryRoute | RegionRoute
+
+
+def _parse_route(raw: str) -> Optional[Route]:
+    """Parse a single ``kind:value`` route string. Unknown kinds return None."""
+    if ":" not in raw:
+        return None
+    kind, _, value = raw.partition(":")
+    if kind == "airport":
+        return AirportRoute(iata_code=value)
+    if kind == "city":
+        return CityRoute(code=value)
+    if kind == "country":
+        return CountryRoute(code=value)
+    if kind == "region":
+        return RegionRoute(code=value)
+    return None
+
+
 class NetworkAirport(BaseModel):
     iata_code: str
     name: str
@@ -115,6 +169,18 @@ class NetworkAirport(BaseModel):
     categories: list[str]
     aliases: list[str]
     priority: Optional[int] = None
+
+    def typed_routes(self) -> list[Route]:
+        """Parse ``routes`` strings into a typed discriminated union."""
+        return [r for r in (_parse_route(s) for s in self.routes) if r is not None]
+
+    def airport_routes(self) -> list[str]:
+        """Just the IATA codes of airports reachable from here."""
+        return [r.iata_code for r in self.typed_routes() if isinstance(r, AirportRoute)]
+
+    def country_routes(self) -> list[str]:
+        """Just the iso2 country codes reachable from here."""
+        return [r.code for r in self.typed_routes() if isinstance(r, CountryRoute)]
 
 
 class NetworkCountry(BaseModel):
