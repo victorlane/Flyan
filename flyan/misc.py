@@ -58,6 +58,65 @@ class Flight(BaseModel):
     flight_key: str
     flight_number: str
     previous_price: Optional[str | float]
+    price_updated: Optional[datetime] = None
+
+
+class DailyFare(BaseModel):
+    """A single day's cheapest fare from /cheapestPerDay."""
+
+    day: datetime
+    departure_date: Optional[datetime]
+    arrival_date: Optional[datetime]
+    price: Optional[float]
+    currency: Optional[str]
+    sold_out: bool
+    unavailable: bool
+
+
+class TimetableFlight(BaseModel):
+    """A scheduled (no-price) flight from /timtbl."""
+
+    carrier_code: str
+    flight_number: str
+    departure_time: str
+    arrival_time: str
+
+
+class NetworkAirport(BaseModel):
+    iata_code: str
+    name: str
+    seo_name: str
+    country_code: str
+    city_code: str
+    region_code: Optional[str] = None
+    currency_code: str
+    time_zone: str
+    base: bool
+    latitude: float
+    longitude: float
+    routes: list[str]
+    seasonal_routes: list[str]
+    categories: list[str]
+    aliases: list[str]
+    priority: Optional[int] = None
+
+
+class NetworkCountry(BaseModel):
+    code: str
+    iso3_code: str
+    name: str
+    currency: str
+    default_airport_code: Optional[str] = None
+    schengen: bool
+
+
+class Network(BaseModel):
+    """Live Ryanair network metadata from the aggregate endpoint."""
+
+    airports: list[NetworkAirport]
+    countries: list[NetworkCountry]
+    cities: list[Dict[str, Any]]
+    regions: list[Dict[str, Any]]
 
 
 class ReturnFlight(BaseModel):
@@ -105,7 +164,7 @@ class FlightSearchParams(BaseModel):
 
         return v
 
-    def to_api_params(self) -> Dict[str, str | int]:
+    def to_api_params(self, currency: Optional[str] = None) -> Dict[str, str | int]:
         """Convert the parameters to the format expected by the Ryanair API"""
         params: Dict[str, str | int] = {
             "departureAirportIataCode": self.from_airport,
@@ -116,13 +175,17 @@ class FlightSearchParams(BaseModel):
         }
 
         if self.destination_country:
-            params["arrivalCountryCode"] = self.destination_country
+            # API requires lowercase iso2; uppercase silently returns no fares
+            params["arrivalCountryCode"] = self.destination_country.lower()
 
         if self.max_price:
             params["priceValueTo"] = self.max_price
 
         if self.to_airport:
             params["arrivalAirportIataCode"] = self.to_airport
+
+        if currency:
+            params["currency"] = currency
 
         return params
 
@@ -141,9 +204,9 @@ class ReturnFlightSearchParams(FlightSearchParams):
         # ideally use model_validator for cross-field validation
         return v
 
-    def to_api_params(self) -> Dict[str, str | int]:
+    def to_api_params(self, currency: Optional[str] = None) -> Dict[str, str | int]:
         """Convert the parameters to the format expected by the Ryanair API"""
-        params = super().to_api_params()
+        params = super().to_api_params(currency=currency)
 
         additional_params = {
             "inboundDepartureDateFrom": self.return_date_from.date().isoformat(),
