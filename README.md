@@ -2,6 +2,26 @@
 
 An open-source unofficial API wrapper to get flight data from Ryanair.
 
+> [!TIP]
+> **New: MCP server for AI agents.** Plug Flyan into Claude Desktop,
+> Claude Code, or Cursor and search Ryanair flights in natural language.
+> Jump to the [MCP Quickstart](#use-with-claude-cursor-and-other-mcp-clients).
+
+## Contents
+
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [API Reference](#api-reference)
+- [Data Models](#data-models)
+- [Examples](#examples)
+- [Explore Mode](#explore-mode)
+- [**Use with Claude, Cursor, and other MCP clients**](#use-with-claude-cursor-and-other-mcp-clients)
+- [Supported Airports](#supported-airports)
+- [Supported Currencies](#supported-currencies)
+- [Rate Limiting](#rate-limiting)
+- [Contributing](#contributing)
+- [Disclaimer](#disclaimer)
+
 ## Installation
 
 ```bash
@@ -377,6 +397,17 @@ If you call multiple explore methods in a row, wrap the transport in
 `CachingTransport` so the network metadata is fetched once and reused.
 
 ## Use with Claude, Cursor, and other MCP clients
+
+> [!IMPORTANT]
+> Two commands and you're done:
+>
+> ```bash
+> uv tool install "Flyan[mcp]"
+> claude mcp add flyan flyan-mcp
+> ```
+>
+> Now your agent can search Ryanair flights in natural language. No API
+> keys, no accounts.
 
 Flyan ships an optional Model Context Protocol server so your agent can
 search Ryanair fares from natural-language prompts like *"find me a cheap

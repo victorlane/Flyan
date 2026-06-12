@@ -13,3 +13,7 @@ test.py
 
 uv.lock
 .ruff_cache/
+
+# release-please regenerates this locally on release runs; the canonical
+# changelog is the GitHub Releases page.
+CHANGELOG.md
