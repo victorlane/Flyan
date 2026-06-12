@@ -9,6 +9,8 @@
 
 An open-source unofficial API wrapper to get flight data from Ryanair.
 
+<!-- mcp-name: io.github.victorlane/flyan-mcp -->
+
 > [!TIP]
 > **New: MCP server for AI agents.** Plug Flyan into Claude Desktop,
 > Claude Code, or Cursor and search Ryanair flights in natural language.
