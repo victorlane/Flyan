@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/victorlane/Flyan/compare/v0.1.0...v0.2.0) (2026-06-12)
+
+
+### Features
+
+* **mcp:** add flyan-mcp server for agent integration ([af88f59](https://github.com/victorlane/Flyan/commit/af88f59d72727f74e9fb08880d964cf334843e46))
+
+
+### Documentation
+
+* **readme:** document explore mode endpoints ([7ffa2ce](https://github.com/victorlane/Flyan/commit/7ffa2ce9f4f43314e5e032cb4506d4083f6a67fc))
+
 ## 0.1.0 (2026-06-12)
 
 
