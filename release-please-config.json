@@ -4,13 +4,7 @@
   "include-component-in-tag": false,
   "packages": {
     ".": {
-      "package-name": "Flyan",
-      "extra-files": [
-        {
-          "type": "generic",
-          "path": "flyan/__init__.py"
-        }
-      ]
+      "package-name": "Flyan"
     }
   }
 }
