@@ -185,6 +185,42 @@ Represents a return flight booking.
 - `summary_currency` (str): Currency for total price
 - `previous_price` (str | float): Previous total price if available
 
+### NetworkAirport
+
+Represents an airport in Ryanair's live network. Returned by the explore methods.
+
+**Attributes:**
+
+- `iata_code` (str): IATA airport code
+- `name` (str): Airport name
+- `seo_name` (str): SEO-friendly name
+- `country_code` (str): Lowercase ISO2 country code (e.g. "ie", "es")
+- `city_code` (str): City code (e.g. "LONDON", "DUBLIN")
+- `region_code` (Optional[str]): Region code (e.g. "SCOTLAND", "ANDALUSIA")
+- `currency_code` (str): Local currency code
+- `time_zone` (str): IANA timezone (e.g. "Europe/Dublin")
+- `base` (bool): True if this is a Ryanair base
+- `latitude` (float), `longitude` (float): Coordinates
+- `routes` (list[str]): Raw route strings (year-round)
+- `seasonal_routes` (list[str]): Raw route strings (seasonal-only)
+- `categories` (list[str]): Marketing categories assigned by Ryanair
+- `aliases` (list[str]): Alternative names
+
+Helpers: `airport_routes()`, `country_routes()`, `seasonal_airport_routes()`,
+`typed_routes()`, `typed_seasonal_routes()`.
+
+### DestinationFare
+
+Returned by `explore_with_fares()`. Pairs a reachable destination with its
+cheapest sampled fare, if one was returned by the price probe.
+
+**Attributes:**
+
+- `airport` (NetworkAirport): The destination airport
+- `fare` (Optional[Flight]): The cheapest sampled fare in the window, or `None`
+  if the route is in the network but no priced inventory came back (no flights
+  in the window, sold out, etc.)
+
 ## Examples
 
 ### Search by Country
@@ -233,9 +269,116 @@ except Exception as e:
     print(f"Unexpected error: {e}")
 ```
 
+## Explore Mode
+
+Explore Mode answers the question "where can I actually fly from here?". It
+reads Ryanair's live network metadata once and exposes the reachable
+destinations from any airport, optionally grouped, filtered, or joined with
+the cheapest fare in a date window.
+
+All methods below are available on both `RyanAir` and `AsyncRyanAir`.
+
+### List every destination
+
+```python
+destinations = client.get_destinations("DUB")
+
+for airport in destinations:
+    print(f"{airport.iata_code} {airport.name} ({airport.country_code})")
+```
+
+### Filter by country, region or city
+
+```python
+# All Scottish airports DUB flies to
+in_scotland = client.get_destinations_in_region("DUB", "SCOTLAND")
+
+# All London airports DUB flies to (LGW, LTN, STN)
+in_london = client.get_destinations_in_city("DUB", "LONDON")
+
+# All Spanish airports DUB flies to
+in_spain = client.get_destinations_in_country("DUB", "es")
+```
+
+Country codes are lowercase ISO2. Region and city codes come from the live
+network (uppercase, e.g. `SCOTLAND`, `ANDALUSIA`, `COSTA_DE_SOL`, `LONDON`,
+`MILAN`).
+
+### Group destinations
+
+```python
+# {country_code: [airports]}
+by_country = client.explore_by_country("DUB")
+
+print(f"DUB flies to {len(by_country)} countries")
+for country, airports in sorted(by_country.items()):
+    codes = ", ".join(a.iata_code for a in airports)
+    print(f"  {country}: {codes}")
+```
+
+```python
+# {region_code: [airports]}
+by_region = client.explore_by_region("DUB")
+```
+
+Airports without a `region_code` are collected under the empty-string key,
+so callers can decide whether to surface or drop them.
+
+### Seasonal-only destinations
+
+```python
+seasonal = client.get_seasonal_destinations("DUB")
+```
+
+Ryanair's `seasonalRoutes` list is sparsely populated upstream, so this often
+returns `[]` outside of summer/winter schedule transitions. The method is
+provided so callers do not need to peek at the raw route strings.
+
+### Destinations with their cheapest fare
+
+`explore_with_fares()` joins the network destinations with a `oneWayFares`
+probe, so each destination comes back with its cheapest sampled `Flight` (or
+`None` if no fare was returned for that route in the window). It costs one
+network call plus one fare call.
+
+```python
+from datetime import datetime, timedelta
+
+start = datetime.now() + timedelta(days=14)
+end = start + timedelta(days=7)
+
+results = client.explore_with_fares("DUB", start, end, max_price=100)
+
+priced = [d for d in results if d.fare is not None]
+cheapest_first = sorted(priced, key=lambda d: d.fare.price)
+
+for d in cheapest_first[:10]:
+    print(f"{d.airport.iata_code} {d.airport.name}: "
+          f"{d.fare.price} {d.fare.currency}")
+```
+
+### Async usage
+
+`AsyncRyanAir` mirrors every explore method:
+
+```python
+import asyncio
+from flyan import AsyncRyanAir
+
+async def main():
+    async with AsyncRyanAir() as client:
+        by_country = await client.explore_by_country("DUB")
+        print(f"{len(by_country)} countries reachable from DUB")
+
+asyncio.run(main())
+```
+
+If you call multiple explore methods in a row, wrap the transport in
+`CachingTransport` so the network metadata is fetched once and reused.
+
 ## Supported Airports
 
-The SDK supports all airports in Ryanair's network. Airport codes must be valid 3-letter IATA codes. You can find the complete list of supported airports in the `stations.json` file.
+The SDK supports all airports in Ryanair's network. Airport codes must be valid 3-letter IATA codes. The live list is fetched from Ryanair's aggregate endpoint via `client.get_network()`; iterate `network.airports` for the full set.
 
 Popular airports include:
 
