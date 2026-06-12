@@ -15,6 +15,7 @@ jobs:
     steps:
       - uses: googleapis/release-please-action@v4
         with:
+          token: ${{ secrets.PAT }}
           release-type: python
           package-name: Flyan
           target-branch: master
