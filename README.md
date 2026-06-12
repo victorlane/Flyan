@@ -376,6 +376,74 @@ asyncio.run(main())
 If you call multiple explore methods in a row, wrap the transport in
 `CachingTransport` so the network metadata is fetched once and reused.
 
+## Use with Claude, Cursor, and other MCP clients
+
+Flyan ships an optional Model Context Protocol server so your agent can
+search Ryanair fares from natural-language prompts like *"find me a cheap
+flight from Dublin to Spain in August under €150"* or *"what's the cheapest
+day in July to fly DUB to BCN"*.
+
+### Quickstart
+
+**1. Install Flyan with the MCP extra:**
+
+```bash
+uv tool install "Flyan[mcp]"
+```
+
+Or with pip:
+
+```bash
+pipx install "Flyan[mcp]"
+```
+
+This installs a `flyan-mcp` console script on your PATH.
+
+**2. Add it to your agent:**
+
+**Claude Code** (one-liner):
+
+```bash
+claude mcp add flyan flyan-mcp
+```
+
+**Claude Desktop**: open `~/Library/Application Support/Claude/claude_desktop_config.json`
+on macOS (or `%APPDATA%\Claude\claude_desktop_config.json` on Windows) and add:
+
+```json
+{
+  "mcpServers": {
+    "flyan": {
+      "command": "flyan-mcp"
+    }
+  }
+}
+```
+
+Then restart Claude Desktop.
+
+**Cursor**: Settings → MCP → Add new server, name `flyan`, command `flyan-mcp`.
+
+**3. Try it.** Ask your agent:
+
+> "Find me a one-way from Dublin to anywhere in Spain in the first week of
+> August under €150."
+
+The agent should call `find_flights` with `destination_country="es"`, then
+summarize the cheapest options.
+
+### Exposed tools
+
+The server exposes four curated tools so the agent can pick reliably:
+
+- `find_flights` for one-way searches with optional country, IATA, or price filters
+- `find_anywhere_under` for "where can I go for under £X" prompts
+- `explore_destinations` for "what countries can I reach from X"
+- `cheapest_per_day` for "what's the cheapest day this month to fly X to Y"
+
+No API keys, accounts, or rate-limit setup. Ryanair's API is anonymous and
+the server reuses a single `RyanAir` client across calls.
+
 ## Supported Airports
 
 The SDK supports all airports in Ryanair's network. Airport codes must be valid 3-letter IATA codes. The live list is fetched from Ryanair's aggregate endpoint via `client.get_network()`; iterate `network.airports` for the full set.
