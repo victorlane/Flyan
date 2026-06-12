@@ -1,6 +1,6 @@
 [project]
 name = "Flyan"
-version = "0.4.1"
+version = "0.4.2"
 description = "Open source unofficial API wrappper to get flight data from RyanAir."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -38,6 +38,12 @@ dev = [
 
 [project.scripts]
 flyan-mcp = "flyan.mcp_server:main"
+
+# Ship currencies.json inside the wheel. Without this setuptools picks
+# up the python sources but leaves the JSON behind, and `import flyan`
+# crashes at module load with FileNotFoundError.
+[tool.setuptools.package-data]
+flyan = ["currencies.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
