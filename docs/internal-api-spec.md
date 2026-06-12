@@ -8,9 +8,8 @@ All endpoints respond JSON. All require the client to first hit
 `https://www.ryanair.com` once so the session/cookies are set; calling the
 services-api host cold sometimes 403s.
 
-A realistic browser `User-Agent` is recommended. The Flyan client rotates one via
-`fake-useragent`.
-
+A realistic browser `User-Agent` is recommended. Flyan rotates one from a bundled
+list of modern Chrome, Safari, Firefox, Edge, and Opera user agents.
 ---
 
 ## Hosts
@@ -246,9 +245,8 @@ Flyan calls this lazily from `get_network()` and exposes it via:
 - **`currency` is a query param, not session state.** The `RyanAir(currency=...)`
   constructor stores the choice but never sends it; every result comes back in
   the departure airport's local currency.
-- **`fake-useragent` triggers a network call to fetch the UA database at
-  import time.** Slow start-up and breaks in air-gapped CI. A small bundled
-  rotation list would be sufficient.
+- **`User-Agent` rotation**: Flyan rotates a bundled set of modern desktop
+  and mobile user agents. No import-time HTTP traffic — works in air-gapped CI.
 - **`__del__` closing the client is fragile.** If the interpreter is shutting
   down `httpx` may already be torn down — better to expose `close()` or
   implement `__enter__`/`__exit__`.
