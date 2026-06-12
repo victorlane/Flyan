@@ -20,6 +20,7 @@ from typing import Optional
 
 from .misc import (
     DailyFare,
+    DestinationFare,
     Flight,
     FlightSearchParams,
     Network,
@@ -210,17 +211,31 @@ class RyanAir:
         except (KeyError, ValueError) as exc:
             raise RyanairException(f"unexpected network shape: {exc}") from exc
 
-    def get_destinations(self, origin: str) -> list[NetworkAirport]:
-        """Every airport currently reachable from ``origin`` as a direct flight."""
+    def _resolve_destinations(
+        self, net: Network, origin: str, *, seasonal: bool = False
+    ) -> list[NetworkAirport]:
+        """Shared lookup: airports reachable from ``origin`` within ``net``.
+
+        ``seasonal=True`` returns airports from the seasonal route list instead
+        of the year-round list.
+        """
         origin = origin.upper()
-        net = self.get_network()
         origin_airport = next(
             (a for a in net.airports if a.iata_code == origin), None
         )
         if origin_airport is None:
             return []
-        reachable = set(origin_airport.airport_routes())
+        codes = (
+            origin_airport.seasonal_airport_routes()
+            if seasonal
+            else origin_airport.airport_routes()
+        )
+        reachable = set(codes)
         return [a for a in net.airports if a.iata_code in reachable]
+
+    def get_destinations(self, origin: str) -> list[NetworkAirport]:
+        """Every airport currently reachable from ``origin`` as a direct flight."""
+        return self._resolve_destinations(self.get_network(), origin)
 
     def get_destinations_in_country(
         self, origin: str, country_code: str
@@ -228,6 +243,100 @@ class RyanAir:
         """Reachable airports from ``origin`` filtered to one country."""
         country = country_code.lower()
         return [a for a in self.get_destinations(origin) if a.country_code == country]
+
+    def get_destinations_in_region(
+        self, origin: str, region_code: str
+    ) -> list[NetworkAirport]:
+        """Reachable airports from ``origin`` filtered to one region.
+
+        Region codes come from the aggregate endpoint (e.g. ``SCOTLAND``,
+        ``COSTA_DE_SOL``, ``CANARY_ISLES``); see :meth:`get_network` then
+        ``network.regions``.
+        """
+        region = region_code.upper()
+        return [a for a in self.get_destinations(origin) if a.region_code == region]
+
+    def get_destinations_in_city(
+        self, origin: str, city_code: str
+    ) -> list[NetworkAirport]:
+        """Reachable airports from ``origin`` filtered to one city.
+
+        City codes are the upstream ``cityCode`` (e.g. ``LONDON``, ``MILAN``) —
+        useful when a city has multiple airports (LON: LTN/STN/LGW) and you
+        want them all without picking one.
+        """
+        city = city_code.upper()
+        return [a for a in self.get_destinations(origin) if a.city_code == city]
+
+    def get_seasonal_destinations(self, origin: str) -> list[NetworkAirport]:
+        """Airports reachable from ``origin`` only on a seasonal schedule.
+
+        Currently the upstream ``seasonalRoutes`` list is sparsely populated;
+        expect this to return ``[]`` for many origins. The method is provided
+        so callers don't need to peek at the internal route strings.
+        """
+        return self._resolve_destinations(self.get_network(), origin, seasonal=True)
+
+    def explore_by_country(
+        self, origin: str
+    ) -> dict[str, list[NetworkAirport]]:
+        """Destinations from ``origin`` grouped by destination country code.
+
+        Keys are lowercase ISO2 country codes; values are the airports in that
+        country reachable from ``origin``. Matches the way the Ryanair UI
+        presents its Explore tab.
+        """
+        grouped: dict[str, list[NetworkAirport]] = {}
+        for airport in self.get_destinations(origin):
+            grouped.setdefault(airport.country_code, []).append(airport)
+        return grouped
+
+    def explore_by_region(
+        self, origin: str
+    ) -> dict[str, list[NetworkAirport]]:
+        """Destinations from ``origin`` grouped by destination region code.
+
+        Airports without a ``region_code`` are collected under the empty-string
+        key so callers can decide whether to drop or surface them.
+        """
+        grouped: dict[str, list[NetworkAirport]] = {}
+        for airport in self.get_destinations(origin):
+            grouped.setdefault(airport.region_code or "", []).append(airport)
+        return grouped
+
+    def explore_with_fares(
+        self,
+        origin: str,
+        from_date: datetime,
+        to_date: datetime,
+        max_price: Optional[int] = None,
+    ) -> list[DestinationFare]:
+        """Reachable destinations from ``origin`` joined to a cheapest-fare probe.
+
+        One network call + one ``oneWayFares`` call. Destinations with no fare
+        in the window come back with ``fare=None`` (the network knows the
+        route exists, but no priced inventory was returned).
+        """
+        params = FlightSearchParams(
+            from_airport=origin,
+            from_date=from_date,
+            to_date=to_date,
+            max_price=max_price,
+        )
+        destinations = self.get_destinations(origin)
+        fares = self.get_oneways(params)
+
+        cheapest: dict[str, Flight] = {}
+        for f in fares:
+            code = f.arrival_airport.iata_code
+            current = cheapest.get(code)
+            if current is None or f.price < current.price:
+                cheapest[code] = f
+
+        return [
+            DestinationFare(airport=a, fare=cheapest.get(a.iata_code))
+            for a in destinations
+        ]
 
     def validate_route(self, origin: str, destination: str) -> bool:
         """True if Ryanair currently flies ``origin`` → ``destination``.

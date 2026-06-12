@@ -182,6 +182,29 @@ class NetworkAirport(BaseModel):
         """Just the iso2 country codes reachable from here."""
         return [r.code for r in self.typed_routes() if isinstance(r, CountryRoute)]
 
+    def typed_seasonal_routes(self) -> list[Route]:
+        """Parse ``seasonal_routes`` strings into a typed discriminated union."""
+        return [r for r in (_parse_route(s) for s in self.seasonal_routes) if r is not None]
+
+    def seasonal_airport_routes(self) -> list[str]:
+        """IATA codes reachable only seasonally (winter/summer schedule)."""
+        return [
+            r.iata_code
+            for r in self.typed_seasonal_routes()
+            if isinstance(r, AirportRoute)
+        ]
+
+
+class DestinationFare(BaseModel):
+    """A reachable destination paired with its cheapest sampled fare, if any.
+
+    ``fare`` is ``None`` when the destination is in the network but no fare
+    came back from the price probe (no flights in the window, sold out, etc.).
+    """
+
+    airport: NetworkAirport
+    fare: Optional[Flight] = None
+
 
 class NetworkCountry(BaseModel):
     code: str

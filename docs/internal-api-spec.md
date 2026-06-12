@@ -223,14 +223,18 @@ currencies, time zones.
 - `countries` — 36 entries. `code` (lowercase iso2), `iso3code`, `name`,
   `currency`, `defaultAirportCode`, `schengen` (bool).
 
-This endpoint is referenced in `ryanair.py` as `AGGREGATE_URL` but never
-called. Calling it once on init (or lazily) would let Flyan:
+Flyan calls this lazily from `get_network()` and exposes it via:
 
-- Validate against the live network instead of the bundled `stations.json`
-  snapshot.
-- Expose route lookups (does DUB fly to BCN at all?).
-- Expose airport coordinates and time zones — useful for displaying local
-  departure times correctly.
+- `validate_route()` — does origin fly to destination at all?
+- `get_destinations()` / `get_destinations_in_country()` /
+  `get_destinations_in_region()` / `get_destinations_in_city()` — reachable
+  airports from an origin, optionally filtered.
+- `get_seasonal_destinations()` — airports only reachable on a seasonal
+  schedule (sparse upstream, often `[]`).
+- `explore_by_country()` / `explore_by_region()` — same destinations grouped
+  by ISO2 country or region code.
+- `explore_with_fares()` — joins destinations with a `oneWayFares` probe so
+  each destination carries its cheapest fare in the window (or `None`).
 
 ---
 

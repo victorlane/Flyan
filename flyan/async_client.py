@@ -14,6 +14,7 @@ from typing import Optional
 
 from .misc import (
     DailyFare,
+    DestinationFare,
     Flight,
     FlightSearchParams,
     Network,
@@ -163,16 +164,93 @@ class AsyncRyanAir:
         except (KeyError, ValueError) as exc:
             raise RyanairException(f"unexpected network shape: {exc}") from exc
 
-    async def get_destinations(self, origin: str) -> list[NetworkAirport]:
+    def _resolve_destinations(
+        self, net: Network, origin: str, *, seasonal: bool = False
+    ) -> list[NetworkAirport]:
         origin = origin.upper()
-        net = await self.get_network()
         origin_airport = next(
             (a for a in net.airports if a.iata_code == origin), None
         )
         if origin_airport is None:
             return []
-        reachable = set(origin_airport.airport_routes())
+        codes = (
+            origin_airport.seasonal_airport_routes()
+            if seasonal
+            else origin_airport.airport_routes()
+        )
+        reachable = set(codes)
         return [a for a in net.airports if a.iata_code in reachable]
+
+    async def get_destinations(self, origin: str) -> list[NetworkAirport]:
+        return self._resolve_destinations(await self.get_network(), origin)
+
+    async def get_destinations_in_country(
+        self, origin: str, country_code: str
+    ) -> list[NetworkAirport]:
+        country = country_code.lower()
+        return [a for a in await self.get_destinations(origin) if a.country_code == country]
+
+    async def get_destinations_in_region(
+        self, origin: str, region_code: str
+    ) -> list[NetworkAirport]:
+        region = region_code.upper()
+        return [a for a in await self.get_destinations(origin) if a.region_code == region]
+
+    async def get_destinations_in_city(
+        self, origin: str, city_code: str
+    ) -> list[NetworkAirport]:
+        city = city_code.upper()
+        return [a for a in await self.get_destinations(origin) if a.city_code == city]
+
+    async def get_seasonal_destinations(self, origin: str) -> list[NetworkAirport]:
+        return self._resolve_destinations(
+            await self.get_network(), origin, seasonal=True
+        )
+
+    async def explore_by_country(
+        self, origin: str
+    ) -> dict[str, list[NetworkAirport]]:
+        grouped: dict[str, list[NetworkAirport]] = {}
+        for airport in await self.get_destinations(origin):
+            grouped.setdefault(airport.country_code, []).append(airport)
+        return grouped
+
+    async def explore_by_region(
+        self, origin: str
+    ) -> dict[str, list[NetworkAirport]]:
+        grouped: dict[str, list[NetworkAirport]] = {}
+        for airport in await self.get_destinations(origin):
+            grouped.setdefault(airport.region_code or "", []).append(airport)
+        return grouped
+
+    async def explore_with_fares(
+        self,
+        origin: str,
+        from_date: datetime,
+        to_date: datetime,
+        max_price: Optional[int] = None,
+    ) -> list[DestinationFare]:
+        """Reachable destinations from ``origin`` joined to a cheapest-fare probe."""
+        params = FlightSearchParams(
+            from_airport=origin,
+            from_date=from_date,
+            to_date=to_date,
+            max_price=max_price,
+        )
+        destinations = await self.get_destinations(origin)
+        fares = await self.get_oneways(params)
+
+        cheapest: dict[str, Flight] = {}
+        for f in fares:
+            code = f.arrival_airport.iata_code
+            current = cheapest.get(code)
+            if current is None or f.price < current.price:
+                cheapest[code] = f
+
+        return [
+            DestinationFare(airport=a, fare=cheapest.get(a.iata_code))
+            for a in destinations
+        ]
 
     async def validate_route(self, origin: str, destination: str) -> bool:
         net = await self.get_network()
