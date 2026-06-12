@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/victorlane/Flyan/compare/v0.1.0...v0.1.1) (2026-06-12)
+
+
+### Documentation
+
+* **readme:** document explore mode endpoints ([7ffa2ce](https://github.com/victorlane/Flyan/commit/7ffa2ce9f4f43314e5e032cb4506d4083f6a67fc))
+
 ## 0.1.0 (2026-06-12)
 
 
