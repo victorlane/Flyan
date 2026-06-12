@@ -33,11 +33,11 @@ def _load_json_file(filename: str) -> Dict[str, Any]:
     try:
         with open(file_path, encoding="utf-8") as f:
             return json.load(f)
-    except FileNotFoundError:
+    except FileNotFoundError as exc:
         raise FileNotFoundError(
             f"Could not find {filename} in {current_dir}. "
             f"Make sure the JSON files are included in the package."
-        )
+        ) from exc
 
 
 currencies: Dict[str, Any] = _load_json_file("currencies.json")

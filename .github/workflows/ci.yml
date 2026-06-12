@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install package and dev extras
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[mcp,dev]"
+
+      - name: Lint with ruff
+        run: ruff check .
+
+      - name: Run tests
+        run: pytest -v
+
+      - name: Import smoke test
+        run: |
+          python -c "import flyan; from flyan import RyanAir, AsyncRyanAir, DestinationFare"
+          python -c "from flyan.mcp_server import mcp; import asyncio; tools = asyncio.run(mcp.list_tools()); assert len(tools) == 4, tools"

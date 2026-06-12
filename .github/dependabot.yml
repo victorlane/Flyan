@@ -1,0 +1,32 @@
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      runtime:
+        patterns:
+          - httpx
+          - pydantic
+          - tenacity
+          - mcp
+      dev:
+        patterns:
+          - pytest*
+          - ruff
+          - pre-commit
+    commit-message:
+      prefix: chore
+      include: scope
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore(actions)

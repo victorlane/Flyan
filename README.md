@@ -1,5 +1,12 @@
 # Flyan SDK
 
+[![PyPI version](https://img.shields.io/pypi/v/Flyan.svg)](https://pypi.org/project/Flyan/)
+[![Python versions](https://img.shields.io/pypi/pyversions/Flyan.svg)](https://pypi.org/project/Flyan/)
+[![CI](https://github.com/victorlane/Flyan/actions/workflows/ci.yml/badge.svg)](https://github.com/victorlane/Flyan/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/victorlane/Flyan/actions/workflows/codeql.yml/badge.svg)](https://github.com/victorlane/Flyan/actions/workflows/codeql.yml)
+[![PyPI downloads](https://img.shields.io/pypi/dm/Flyan.svg)](https://pypi.org/project/Flyan/)
+[![License](https://img.shields.io/github/license/victorlane/Flyan.svg)](https://github.com/victorlane/Flyan/blob/master/LICENSE)
+
 An open-source unofficial API wrapper to get flight data from Ryanair.
 
 > [!TIP]
