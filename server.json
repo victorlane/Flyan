@@ -1,0 +1,34 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.victorlane/flyan-mcp",
+  "title": "Flyan",
+  "description": "Search Ryanair flights from your AI agent. Unofficial.",
+  "repository": {
+    "url": "https://github.com/victorlane/Flyan",
+    "source": "github"
+  },
+  "version": "0.4.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "Flyan",
+      "version": "0.4.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "runtimeHint": "uvx",
+      "runtimeArguments": [
+        {
+          "type": "named",
+          "name": "--from",
+          "value": "Flyan[mcp]"
+        },
+        {
+          "type": "positional",
+          "value": "flyan-mcp",
+          "valueHint": "executable"
+        }
+      ]
+    }
+  ]
+}
