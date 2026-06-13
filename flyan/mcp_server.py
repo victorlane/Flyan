@@ -4,7 +4,7 @@ MCP server for Flyan.
 Exposes a small, agent-friendly slice of the Flyan API over the Model
 Context Protocol so LLM clients (Claude Desktop, Cursor, Claude Code, etc.)
 can search Ryanair fares from natural-language prompts like
-"find me a cheap flight from Dublin to Spain in August under €150".
+"find me a cheap flight from Dublin to Spain in August under \u20ac150".
 
 Run via the ``flyan-mcp`` console script registered in ``pyproject.toml``,
 or directly with ``python -m flyan.mcp_server``.
@@ -12,6 +12,7 @@ or directly with ``python -m flyan.mcp_server``.
 
 from __future__ import annotations
 
+import os
 from datetime import datetime
 from typing import Any, Optional
 
@@ -24,14 +25,21 @@ mcp = FastMCP("flyan")
 
 _client: Optional[RyanAir] = None
 
-
 def _get_client() -> RyanAir:
-    """Lazily build the RyanAir client so importing this module never hits the network."""
+    """Lazily build the RyanAir client so importing this module never hits the network.
+
+    Reads the ``FLYAN_CURRENCY`` environment variable (default ``"EUR"``) and
+    passes it to :class:`~flyan.ryanair.RyanAir` so agents can request prices
+    in a currency other than EUR without editing the server source.  Set it
+    before launching the MCP server, e.g.::
+
+        FLYAN_CURRENCY=GBP flyan-mcp
+    """
     global _client
     if _client is None:
-        _client = RyanAir()
+        currency = os.environ.get("FLYAN_CURRENCY", "EUR")
+        _client = RyanAir(currency=currency)
     return _client
-
 
 def _flight_to_dict(f: Flight) -> dict[str, Any]:
     """Trim a Flight to the fields an agent actually needs.
@@ -52,7 +60,6 @@ def _flight_to_dict(f: Flight) -> dict[str, Any]:
         "price": f.price,
         "currency": f.currency,
     }
-
 
 @mcp.tool()
 def find_flights(
@@ -83,7 +90,6 @@ def find_flights(
     flights = _get_client().get_oneways(params)
     return [_flight_to_dict(f) for f in flights]
 
-
 @mcp.tool()
 def find_anywhere_under(
     from_airport: str,
@@ -93,7 +99,7 @@ def find_anywhere_under(
 ) -> list[dict[str, Any]]:
     """Cheapest fares from ``from_airport`` to *anywhere* under ``max_price``.
 
-    Useful for "where can I go for under £50 this weekend" style prompts.
+    Useful for "where can I go for under \u00a350 this weekend" style prompts.
     """
     flights = _get_client().find_anywhere_under(
         origin=from_airport,
@@ -102,7 +108,6 @@ def find_anywhere_under(
         to_date=datetime.fromisoformat(to_date),
     )
     return [_flight_to_dict(f) for f in flights]
-
 
 @mcp.tool()
 def explore_destinations(origin: str) -> dict[str, list[dict[str, str]]]:
@@ -125,7 +130,6 @@ def explore_destinations(origin: str) -> dict[str, list[dict[str, str]]]:
         ]
         for country, airports in grouped.items()
     }
-
 
 @mcp.tool()
 def cheapest_per_day(
@@ -156,11 +160,9 @@ def cheapest_per_day(
         for f in fares
     ]
 
-
 def main() -> None:
     """Entry point for the ``flyan-mcp`` console script."""
     mcp.run()
-
 
 if __name__ == "__main__":
     main()
