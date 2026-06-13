@@ -1,0 +1,44 @@
+name: Endpoint Change
+description: Ryanair changed or broke an API endpoint that Flyan relies on
+title: "[ENDPOINT] "
+labels: [endpoint-change]
+assignees: ""
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template when Ryanair has changed an endpoint's URL, request shape, or response shape.
+
+  - type: input
+    id: endpoint-url
+    attributes:
+      label: Endpoint URL
+      description: The full URL of the affected Ryanair endpoint.
+      placeholder: "e.g. https://www.ryanair.com/api/booking/v4/query"
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed-shape
+    attributes:
+      label: Observed shape
+      description: What does the endpoint currently return / expect? Paste a sample JSON or describe the change.
+      render: json
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-shape
+    attributes:
+      label: Expected shape
+      description: What did it used to return / expect (the shape Flyan currently assumes)?
+      render: json
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Any other details, e.g. when the change was first noticed, related endpoints also affected.

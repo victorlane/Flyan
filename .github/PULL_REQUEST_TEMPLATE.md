@@ -1,27 +1,25 @@
-##  Description
-Provide a brief description of the changes in this PR.
+## Description
 
-##  Related Issue
-Fixes #(issue number)
+<!-- Briefly describe what this PR does and why. -->
 
-##  Type of Change
-- [ ]  Bug fix (non-breaking change which fixes an issue)
-- [ ]  New feature (non-breaking change which adds functionality)
-- [ ]  Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ]  Documentation update
-- [ ]  Code style update (formatting, renaming)
-- [ ]  Refactor (no functional changes)
+## Related issue
 
-##  Checklist
-- [ ] My code follows the project's style guidelines
-- [ ] I have performed a self-review of my own code
-- [ ] I have commented my code where necessary
-- [ ] I have made corresponding changes to the documentation
-- [ ] My changes generate no new warnings
-- [ ] I have tested my changes locally
+Fixes #
 
-##  Screenshots (if applicable)
-Add screenshots to show the changes.
+## Type of change
 
-##  Additional Notes
-Any additional information that reviewers should know.
+- [ ] Bug fix
+- [ ] New endpoint
+- [ ] Endpoint update (Ryanair changed something)
+- [ ] Refactor / internal improvement
+- [ ] Documentation only
+
+## Checklist
+
+<!-- If you're adding or updating an endpoint, work through the "When you add an endpoint" section of AGENTS.md. -->
+
+- [ ] Tests added or updated for the changed behaviour
+- [ ] Sync and async variants both handled (if applicable)
+- [ ] Endpoint spec / docstring updated to reflect actual request and response shapes
+- [ ] `AGENTS.md` endpoint checklist completed (new/updated endpoints only)
+- [ ] No unrelated changes mixed in

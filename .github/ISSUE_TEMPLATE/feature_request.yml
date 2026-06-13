@@ -1,0 +1,36 @@
+name: Feature Request
+description: Suggest a new feature or improvement for Flyan
+title: "[FEATURE] "
+labels: [enhancement]
+assignees: ""
+
+body:
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: What problem are you trying to solve? Why does Flyan not already cover it?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-api
+    attributes:
+      label: Proposed API
+      description: How would you like to call this feature? Show a concrete code example.
+      render: python
+      placeholder: |
+        import flyan
+
+        client = flyan.Client()
+        result = client.new_method(param="value")
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What workarounds or alternative approaches have you tried or thought about?
+    validations:
+      required: false
