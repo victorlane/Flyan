@@ -1,0 +1,67 @@
+name: Bug Report
+description: Something is broken in Flyan
+title: "[BUG] "
+labels: [bug]
+assignees: ""
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report. Please fill in as much detail as possible.
+
+  - type: input
+    id: python-version
+    attributes:
+      label: Python version
+      placeholder: "e.g. 3.11.4"
+    validations:
+      required: true
+
+  - type: input
+    id: flyan-version
+    attributes:
+      label: Flyan version
+      placeholder: "e.g. 0.3.1"
+    validations:
+      required: true
+
+  - type: input
+    id: endpoint-affected
+    attributes:
+      label: Endpoint affected
+      description: Which Flyan method or endpoint is broken?
+      placeholder: "e.g. flyan.get_flights(), /api/booking/v4/query"
+    validations:
+      required: true
+
+  - type: textarea
+    id: minimal-repro
+    attributes:
+      label: Minimal reproduction
+      description: The smallest possible snippet that reproduces the bug.
+      render: python
+      placeholder: |
+        import flyan
+
+        client = flyan.Client()
+        result = client.get_flights(...)  # fails here
+    validations:
+      required: true
+
+  - type: textarea
+    id: traceback
+    attributes:
+      label: Full traceback
+      description: Paste the complete error output here.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
