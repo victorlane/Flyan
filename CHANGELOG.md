@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.3](https://github.com/victorlane/Flyan/compare/v0.4.2...v0.4.3) (2026-06-13)
+
+
+### Bug Fixes
+
+* **issue-templates:** change assignees from "" to [] so GitHub accepts the forms ([2a9b6db](https://github.com/victorlane/Flyan/commit/2a9b6db780fe4d113348d309495396a07e5e4706))
+
 ## [0.4.2](https://github.com/victorlane/Flyan/compare/v0.4.1...v0.4.2) (2026-06-13)
 
 
