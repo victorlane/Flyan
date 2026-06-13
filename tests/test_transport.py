@@ -1,6 +1,8 @@
 from __future__ import annotations
+
 import sys
 from unittest.mock import Mock
+
 
 def test_import_transport_makes_no_http_requests(monkeypatch):
     """flyan.transport import must not trigger network calls."""
@@ -11,7 +13,7 @@ def test_import_transport_makes_no_http_requests(monkeypatch):
 
     sys.modules.pop("flyan.transport", None)
 
-    import flyan.transport
+    import flyan.transport  # noqa: F401  -- imported for its import-time side effects
 
     mock_client.assert_not_called()
     mock_async_client.assert_not_called()

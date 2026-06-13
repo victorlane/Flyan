@@ -464,6 +464,31 @@ Then restart Claude Desktop.
 
 **Cursor**: Settings → MCP → Add new server, name `flyan`, command `flyan-mcp`.
 
+### Currency
+
+The server returns prices in EUR by default. To get them in another
+currency, set the `FLYAN_CURRENCY` env var to any [supported ISO 4217 code](#supported-currencies)
+before launching `flyan-mcp`:
+
+```bash
+FLYAN_CURRENCY=GBP flyan-mcp
+```
+
+Or pass it through your agent's MCP config:
+
+```json
+{
+  "mcpServers": {
+    "flyan": {
+      "command": "flyan-mcp",
+      "env": { "FLYAN_CURRENCY": "GBP" }
+    }
+  }
+}
+```
+
+Unknown or unsupported codes silently fall back to EUR.
+
 **3. Try it.** Ask your agent:
 
 > "Find me a one-way from Dublin to anywhere in Spain in the first week of
