@@ -2,7 +2,7 @@ name: Endpoint Change
 description: Ryanair changed or broke an API endpoint that Flyan relies on
 title: "[ENDPOINT] "
 labels: [endpoint-change]
-assignees: ""
+assignees: []
 
 body:
   - type: markdown

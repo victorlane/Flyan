@@ -2,7 +2,7 @@ name: Feature Request
 description: Suggest a new feature or improvement for Flyan
 title: "[FEATURE] "
 labels: [enhancement]
-assignees: ""
+assignees: []
 
 body:
   - type: textarea
