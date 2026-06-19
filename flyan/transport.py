@@ -14,6 +14,7 @@ that change rarely (notably ``aggregate``).
 
 from __future__ import annotations
 
+import contextlib
 import logging
 import random
 import time
@@ -99,25 +100,31 @@ def _process_next_page(
 class Transport(Protocol):
     """Sync transport interface."""
 
-    def get_json(self, url: str, params: Optional[Dict[str, Any]] = None) -> Dict[str, Any]: ...
+    def get_json(self, url: str, params: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        """Fetch and parse JSON from ``url``."""
 
     def iter_fare_pages(
         self, url: str, params: Dict[str, Any]
-    ) -> Iterator[Dict[str, Any]]: ...
+    ) -> Iterator[Dict[str, Any]]:
+        """Yield each page of a paginated fare-search response."""
 
-    def close(self) -> None: ...
+    def close(self) -> None:
+        """Release any underlying resources (HTTP client, etc.)."""
 
 
 class AsyncTransport(Protocol):
     """Async transport interface."""
 
-    async def get_json(self, url: str, params: Optional[Dict[str, Any]] = None) -> Dict[str, Any]: ...
+    async def get_json(self, url: str, params: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        """Fetch and parse JSON from ``url``."""
 
     def iter_fare_pages(
         self, url: str, params: Dict[str, Any]
-    ) -> AsyncIterator[Dict[str, Any]]: ...
+    ) -> AsyncIterator[Dict[str, Any]]:
+        """Yield each page of a paginated fare-search response."""
 
-    async def aclose(self) -> None: ...
+    async def aclose(self) -> None:
+        """Release any underlying resources (HTTP client, etc.)."""
 
 
 class RyanairTransport:
@@ -140,10 +147,10 @@ class RyanairTransport:
                 logger.warning("Could not warm cookies from %s", HOMEPAGE_URL)
 
     def close(self) -> None:
-        try:
+        # Best-effort cleanup: a double-close or already-broken client
+        # shouldn't bubble out of __exit__/finally callers.
+        with contextlib.suppress(Exception):
             self.client.close()
-        except Exception:
-            pass
 
     @retry(
         stop=stop_after_attempt(5),
@@ -193,10 +200,10 @@ class AsyncRyanairTransport:
         self._warmed = False
 
     async def aclose(self) -> None:
-        try:
+        # Best-effort cleanup: a double-close or already-broken client
+        # shouldn't bubble out of __aexit__/finally callers.
+        with contextlib.suppress(Exception):
             await self.client.aclose()
-        except Exception:
-            pass
 
     async def __aenter__(self) -> "AsyncRyanairTransport":
         return self

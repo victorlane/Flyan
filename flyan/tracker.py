@@ -93,7 +93,7 @@ class PriceTracker:
 
     def _iter_rows(self) -> Iterable[dict]:
         if not self.path.exists():
-            return iter(())
+            return
         with self.path.open("r", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()

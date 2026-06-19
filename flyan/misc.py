@@ -26,6 +26,8 @@ def _load_json_file(filename: str) -> Dict[str, Any]:
         if json_file.is_file():
             return json.loads(json_file.read_text(encoding="utf-8"))
     except Exception:
+        # importlib.resources can fail in editable installs or odd zipimport
+        # layouts; fall through to the filesystem path below.
         pass
 
     current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -41,6 +43,27 @@ def _load_json_file(filename: str) -> Dict[str, Any]:
 
 
 currencies: Dict[str, Any] = _load_json_file("currencies.json")
+
+__all__ = [
+    "currencies",
+    "Airport",
+    "Flight",
+    "ReturnFlight",
+    "DailyFare",
+    "TimetableFlight",
+    "ReturnDailyFares",
+    "AirportRoute",
+    "CityRoute",
+    "CountryRoute",
+    "RegionRoute",
+    "Route",
+    "NetworkAirport",
+    "DestinationFare",
+    "NetworkCountry",
+    "Network",
+    "FlightSearchParams",
+    "ReturnFlightSearchParams",
+]
 
 
 _IATA_PATTERN = re.compile(r"^[A-Z]{3}$")
