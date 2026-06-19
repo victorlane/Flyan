@@ -7,12 +7,12 @@
     "url": "https://github.com/victorlane/Flyan",
     "source": "github"
   },
-  "version": "0.4.0",
+  "version": "0.4.2",
   "packages": [
     {
       "registryType": "pypi",
       "identifier": "Flyan",
-      "version": "0.4.0",
+      "version": "0.4.2",
       "transport": {
         "type": "stdio"
       },
