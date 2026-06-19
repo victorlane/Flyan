@@ -139,6 +139,16 @@ Releases page, which release-please populates.
 Version is tracked in three places that must stay in sync:
 `pyproject.toml`, `.release-please-manifest.json`, `flyan/__init__.py`.
 
+## Commit messages
+
+- Use Conventional Commits (`feat:`, `fix:`, `docs:`, `chore:`,
+  `refactor:`, `test:`). `release-please` keys off these.
+- **Do not add `Co-Authored-By:` trailers for AI assistants** (Claude,
+  Copilot, Cursor, etc.). Commits are authored by the human running the
+  tool. No "Generated with" footers either.
+- Keep the subject under 72 chars and write it in the imperative
+  ("add X", not "added X").
+
 ## What not to do
 
 - Don't import directly from `httpx` outside `transport.py`. Anywhere else
