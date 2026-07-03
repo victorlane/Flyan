@@ -4,6 +4,10 @@ Living notes on the undocumented Ryanair endpoints Flyan talks to (or could talk
 Reverse-engineered from poking the live API on 2026-06-11. Update whenever an
 endpoint's behaviour, params, or response shape changes.
 
+A daily workflow (`.github/workflows/api-health.yml`, running
+`scripts/api_health_check.py`) probes the aggregate and fare-search shapes
+against the live API and opens an `endpoint` issue when they drift.
+
 All endpoints respond JSON. All require the client to first hit
 `https://www.ryanair.com` once so the session/cookies are set; calling the
 services-api host cold sometimes 403s.

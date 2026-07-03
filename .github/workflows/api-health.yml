@@ -1,0 +1,51 @@
+name: API health
+
+# Ryanair's API has no contract. Probe it daily so shape drift opens an
+# `endpoint` issue before it breaks users (see issue #14).
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install package
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Probe live API
+        run: python scripts/api_health_check.py --report report.md
+
+      - name: Open or update issue on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Live API health check failed"
+          if [ ! -f report.md ]; then
+            printf '## Live API health check failed\n\nThe probe crashed before producing a report — check the workflow logs.\n' > report.md
+          fi
+          printf '\nWorkflow run: %s\n' "$RUN_URL" >> report.md
+          existing=$(gh issue list --label endpoint --state open \
+            --search "in:title \"$title\"" --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file report.md
+          else
+            gh issue create --title "$title" --label endpoint --body-file report.md
+          fi
