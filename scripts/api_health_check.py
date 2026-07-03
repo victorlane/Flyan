@@ -185,7 +185,7 @@ def write_report(path: str, failures: List[str]) -> None:
         "",
         *(f"- {f}" for f in failures),
         "",
-        "If the upstream shape changed, update `flyan/wire.py` and "
+        "If the upstream shape changed, update `flyan/wire.py` and " +
         "`docs/internal-api-spec.md` to match.",
         "",
     ]
