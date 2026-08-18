@@ -38,4 +38,14 @@ jobs:
       - name: Import smoke test
         run: |
           python -c "import flyan; from flyan import RyanAir, AsyncRyanAir, DestinationFare"
-          python -c "from flyan.mcp_server import mcp; import asyncio; tools = asyncio.run(mcp.list_tools()); assert len(tools) == 4, tools"
+          python - <<'EOF'
+          import asyncio
+          import inspect
+
+          from flyan.mcp_server import mcp
+
+          tools = mcp.list_tools()
+          if inspect.isawaitable(tools):  # mcp < 2.0 exposed list_tools as async
+              tools = asyncio.run(tools)
+          assert len(tools) == 4, tools
+          EOF
