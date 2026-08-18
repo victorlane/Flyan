@@ -28,8 +28,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .
 
+      # Exit 2 means Ryanair's WAF refused the runner's IP, not that the
+      # API shape drifted — warn, but don't fail the job or file an issue.
       - name: Probe live API
-        run: python scripts/api_health_check.py --report report.md
+        run: |
+          set +e
+          python scripts/api_health_check.py --report report.md
+          code=$?
+          set -e
+          if [ "$code" -eq 2 ]; then
+            echo "::warning::Live API probe blocked by Ryanair (403/429) from this runner; shape not checked."
+            exit 0
+          fi
+          exit "$code"
 
       - name: Open or update issue on failure
         if: failure()

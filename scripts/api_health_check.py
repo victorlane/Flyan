@@ -7,17 +7,26 @@ aggregate endpoint and a one-way fare search through Flyan's own transport
 and asserts that the shapes ``flyan.wire`` expects still hold.
 
 On any drift it writes a markdown report (``--report``) describing the
-difference and exits non-zero, so the workflow can open an ``endpoint``
-issue pointing at ``flyan/wire.py`` and ``docs/internal-api-spec.md``.
+difference and exits 1, so the workflow can open an ``endpoint`` issue
+pointing at ``flyan/wire.py`` and ``docs/internal-api-spec.md``.
+
+Ryanair's WAF sometimes answers a CI runner's IP with a blanket 403 that has
+nothing to do with the response shape. That is not drift, so the probe
+retries the whole run on a fresh session and, if every attempt is still
+blocked, exits ``BLOCKED_EXIT`` (2) without writing a report — the workflow
+turns that into a warning instead of an issue.
 """
 
 from __future__ import annotations
 
 import argparse
 import sys
+import time
 import traceback
 from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, List
+
+import httpx
 
 from flyan.misc import FlightSearchParams
 from flyan.transport import RyanairTransport
@@ -40,6 +49,14 @@ AIRPORT_REQUIRED_FIELDS = (
     "timeZone",
     "coordinates",
 )
+
+# The probe is blocked, not broken, when the WAF answers with one of these.
+BLOCKED_STATUSES = frozenset({401, 403, 429})
+BLOCKED_EXIT = 2
+# Each attempt builds a fresh transport, so it gets a new User-Agent and a
+# new cookie warm-up — usually enough to get past a cold 403.
+MAX_ATTEMPTS = 3
+RETRY_WAIT_SECONDS = 20.0
 
 SAMPLE_AIRPORT = "DUB"
 FARE_ORIGIN = "DUB"
@@ -155,7 +172,30 @@ def check_fare_search(transport: RyanairTransport) -> List[str]:
     return failures
 
 
-def run_checks() -> List[str]:
+class Blocked(Exception):
+    """The WAF turned the probe away before it could see a response shape."""
+
+
+def _blocked_status(exc: BaseException) -> int | None:
+    """Return the blocking HTTP status if ``exc`` was caused by one."""
+    seen = set()
+    while exc is not None and id(exc) not in seen:
+        seen.add(id(exc))
+        if (
+            isinstance(exc, httpx.HTTPStatusError)
+            and exc.response.status_code in BLOCKED_STATUSES
+        ):
+            return exc.response.status_code
+        exc = exc.__cause__ or exc.__context__
+    return None
+
+
+def _run_once() -> List[str]:
+    """One full pass over every check on a fresh session.
+
+    :raises Blocked: if any check was turned away by the WAF; the remaining
+        checks are skipped because their verdicts would be meaningless.
+    """
     failures: List[str] = []
     transport = RyanairTransport()
     try:
@@ -166,6 +206,9 @@ def run_checks() -> List[str]:
             try:
                 failures.extend(check(transport))
             except Exception as exc:  # noqa: BLE001 - a dead endpoint is a finding
+                status = _blocked_status(exc)
+                if status is not None:
+                    raise Blocked(f"{name}: HTTP {status}") from exc
                 failures.append(
                     f"{name}: probe crashed with `{exc!r}`\n"
                     f"```\n{traceback.format_exc()}```"
@@ -173,6 +216,27 @@ def run_checks() -> List[str]:
     finally:
         transport.close()
     return failures
+
+
+def run_checks(
+    attempts: int = MAX_ATTEMPTS, wait: float = RETRY_WAIT_SECONDS
+) -> List[str]:
+    """Probe the live API, retrying a blocked run on a fresh session.
+
+    :raises Blocked: if every attempt was blocked by the WAF.
+    """
+    for attempt in range(1, attempts + 1):
+        try:
+            return _run_once()
+        except Blocked as exc:
+            print(
+                f"Attempt {attempt}/{attempts} blocked ({exc}).",
+                file=sys.stderr,
+            )
+            if attempt == attempts:
+                raise
+            time.sleep(wait * attempt)
+    raise AssertionError("unreachable")  # pragma: no cover
 
 
 def write_report(path: str, failures: List[str]) -> None:
@@ -202,7 +266,18 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    failures = run_checks()
+    try:
+        failures = run_checks()
+    except Blocked as exc:
+        # Not drift: Ryanair refused this IP outright, so there is no shape
+        # to compare. Report it as its own outcome and leave wire.py alone.
+        print(
+            f"Live API probe blocked after {MAX_ATTEMPTS} attempts ({exc}) — "
+            "no shape checked.",
+            file=sys.stderr,
+        )
+        return BLOCKED_EXIT
+
     if not failures:
         print("Live API health check passed.")
         return 0
