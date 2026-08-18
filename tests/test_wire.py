@@ -13,70 +13,7 @@ from flyan.wire import (
     parse_network_airport,
     serialize_search_params,
 )
-
-ONE_WAY_FARE_OUTBOUND = {
-    "departureAirport": {
-        "countryName": "Ireland",
-        "iataCode": "DUB",
-        "name": "Dublin",
-        "seoName": "dublin",
-        "city": {
-            "name": "Dublin",
-            "code": "DUBLIN",
-            "countryCode": "ie",
-            "macCode": None,
-        },
-    },
-    "arrivalAirport": {
-        "countryName": "Spain",
-        "iataCode": "BCN",
-        "name": "Barcelona",
-        "seoName": "barcelona",
-        "city": {
-            "name": "Barcelona",
-            "code": "BARCELONA",
-            "countryCode": "es",
-            "macCode": None,
-        },
-    },
-    "departureDate": "2026-07-02T21:50:00",
-    "arrivalDate": "2026-07-03T01:20:00",
-    "price": {
-        "value": 82.31,
-        "valueMainUnit": "82",
-        "valueFractionalUnit": "31",
-        "currencyCode": "EUR",
-        "currencySymbol": "€",
-    },
-    "flightKey": "FR~6395~ ~~DUB~07/02/2026 21:50~BCN~07/03/2026 01:20~ ~ ",
-    "flightNumber": "FR6395",
-    "previousPrice": None,
-    "priceUpdated": 1749594000000,
-}
-
-
-NETWORK_AIRPORT_DUB = {
-    "iataCode": "DUB",
-    "name": "Dublin",
-    "seoName": "dublin",
-    "countryCode": "ie",
-    "cityCode": "DUBLIN",
-    "regionCode": "LEINSTER",
-    "currencyCode": "EUR",
-    "timeZone": "Europe/Dublin",
-    "base": True,
-    "coordinates": {"latitude": 53.4213, "longitude": -6.27007},
-    "routes": [
-        "airport:BCN",
-        "city:LONDON",
-        "country:es",
-        "region:SCOTLAND",
-    ],
-    "seasonalRoutes": ["airport:TLV"],
-    "categories": ["BEACH"],
-    "aliases": [],
-    "priority": 1,
-}
+from tests.fixtures import NETWORK_AIRPORT_DUB, ONE_WAY_FARE_OUTBOUND
 
 
 def test_parse_flight_translates_field_names_and_iso_dates() -> None:

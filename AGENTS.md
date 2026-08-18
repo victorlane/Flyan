@@ -110,16 +110,50 @@ instead. (Code comments are fine.)
 
 ## Testing
 
-There is no test suite at the moment. Smoke-test changes against the
-live API:
+```bash
+pytest
+```
+
+The suite is offline and fast (well under a second). Nothing in `tests/`
+may touch the network. Two rules keep it that way:
+
+- Anything that goes through a `Transport` uses one of the fakes in
+  `tests/fakes.py` (`FakeTransport`, `FakeAsyncTransport`,
+  `CountingTransport`).
+- Anything that tests `transport.py` itself drives the real adapter over
+  an `httpx.MockTransport` handler, built by the `mock_client` /
+  `mock_async_client` fixtures in `tests/conftest.py`.
+
+Layout:
+
+```
+tests/
+  conftest.py       # mock_client, mock_async_client, recorder,
+                    # fast_retries (strips tenacity's backoff so retry
+                    # tests run in microseconds)
+  fakes.py          # in-memory Transport / AsyncTransport doubles
+  fixtures.py       # canned Ryanair wire payloads, shared by every module
+  test_<module>.py  # one file per module under flyan/
+```
+
+Async tests are marked with a module-level
+`pytestmark = pytest.mark.asyncio` (pytest-asyncio, strict mode).
+
+Captured payloads in `tests/fixtures.py` are the trimmed real thing. When
+an endpoint changes shape, update the fixture and
+`docs/internal-api-spec.md` together.
+
+The suite pins behaviour, it does not prove the API still answers that
+way. When you touch `transport.py` or `wire.py`, also smoke-test against
+the live API (it's anonymous, so this is cheap):
 
 ```bash
 .venv/bin/python -c "from flyan import RyanAir; ..."
 ```
 
-The API is anonymous, so this is cheap. Wrap the transport in
-`CachingTransport` when iterating on aggregate-endpoint work so you
-don't refetch the network metadata on every run.
+Wrap the transport in `CachingTransport` when iterating on
+aggregate-endpoint work so you don't refetch the network metadata on
+every run.
 
 ## Release flow
 

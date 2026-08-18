@@ -65,9 +65,18 @@ pytest
 `pre-commit` runs the same lint hooks on commit. CI runs the full suite
 against every supported Python version.
 
-There is no fixture suite for the live Ryanair endpoints. If your change
-touches `transport.py` or `wire.py`, smoke-test it against the live API
-(it's anonymous) and mention what you ran in the PR description.
+The test suite is offline: no test may hit the network. Use the transport
+fakes in `tests/fakes.py` for anything that talks to a `Transport`, and
+the `mock_client` / `mock_async_client` fixtures from `tests/conftest.py`
+when you need to exercise the real HTTP adapter. Canned Ryanair payloads
+live in `tests/fixtures.py`; add to that file rather than pasting a
+response into a test. New tests go in `tests/test_<module>.py`, one file
+per module under `flyan/`.
+
+Those fixtures pin the shape we last saw, not the shape the API serves
+today. If your change touches `transport.py` or `wire.py`, also
+smoke-test it against the live API (it's anonymous) and mention what you
+ran in the PR description.
 
 ## Pull request flow
 
