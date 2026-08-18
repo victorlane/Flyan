@@ -36,7 +36,7 @@ flyan/
                     # Network, NetworkAirport, DestinationFare, ...).
                     # No wire knowledge.
   tracker.py        # Local PriceTracker for price-history analysis.
-  mcp_server.py     # FastMCP server exposing curated tools to agents.
+  mcp_server.py     # MCP server exposing curated tools to agents.
   currencies.json   # Static lookup of supported ISO 4217 currencies.
 
 docs/

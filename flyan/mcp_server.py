@@ -16,12 +16,15 @@ import os
 from datetime import datetime
 from typing import Any, Optional
 
-from mcp.server.fastmcp import FastMCP
+try:  # mcp >= 2.0 renamed FastMCP to MCPServer and moved the module
+    from mcp.server.mcpserver import MCPServer as _Server
+except ModuleNotFoundError:  # pragma: no cover - mcp < 2.0
+    from mcp.server.fastmcp import FastMCP as _Server
 
 from .misc import Flight, FlightSearchParams
 from .ryanair import RyanAir
 
-mcp = FastMCP("flyan")
+mcp = _Server("flyan")
 
 _client: Optional[RyanAir] = None
 
