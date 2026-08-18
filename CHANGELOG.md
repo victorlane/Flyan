@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.4](https://github.com/victorlane/Flyan/compare/v0.4.3...v0.4.4) (2026-08-18)
+
+
+### Bug Fixes
+
+* **ci:** don't report a WAF 403 as API shape drift ([#33](https://github.com/victorlane/Flyan/issues/33)) ([a96d42e](https://github.com/victorlane/Flyan/commit/a96d42ef6d3d8b6e272ffaf68cd342fa38415cc9)), closes [#30](https://github.com/victorlane/Flyan/issues/30)
+* **mcp:** support mcp 2.0's MCPServer rename ([#32](https://github.com/victorlane/Flyan/issues/32)) ([5faa8bd](https://github.com/victorlane/Flyan/commit/5faa8bdd8b7bf10fc1bc1c45594880791d46511d))
+
 ## [0.4.3](https://github.com/victorlane/Flyan/compare/v0.4.2...v0.4.3) (2026-06-19)
 
 
