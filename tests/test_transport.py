@@ -13,6 +13,7 @@ from unittest.mock import Mock
 import httpx
 import pytest
 
+from flyan import transport as transport_module
 from flyan.transport import (
     _USER_AGENTS,
     HOMEPAGE_URL,
@@ -300,8 +301,6 @@ def test_iter_fare_pages_is_capped_at_max_pages(mock_client):
 @pytest.fixture
 def clock(monkeypatch: pytest.MonkeyPatch):
     """A hand-cranked replacement for ``time.monotonic`` inside the transport."""
-    import flyan.transport as transport_module
-
     now = {"t": 1000.0}
     monkeypatch.setattr(transport_module.time, "monotonic", lambda: now["t"])
 
