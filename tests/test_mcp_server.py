@@ -114,6 +114,13 @@ def _list_tools() -> list:
     return tools
 
 
+def _input_schema(tool) -> dict:
+    schema = getattr(tool, "inputSchema", None)
+    if schema is None:  # mcp >= 2.0 renamed the field to input_schema
+        schema = tool.input_schema
+    return schema
+
+
 def test_registers_exactly_the_expected_tools():
     assert [t.name for t in _list_tools()] == EXPECTED_TOOLS
 
@@ -133,7 +140,7 @@ def test_every_registered_tool_is_documented():
 )
 def test_tool_schemas_require_the_right_arguments(tool_name: str, required: set):
     tool = next(t for t in _list_tools() if t.name == tool_name)
-    assert set(tool.inputSchema.get("required", [])) == required
+    assert set(_input_schema(tool).get("required", [])) == required
 
 
 def test_find_flights_calls_get_oneways_with_parsed_params(stub_client):
